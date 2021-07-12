@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
+  "bin": {
+    "gendiff": "gendiff.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Eudgene/frontend-project-lvl2.git"
