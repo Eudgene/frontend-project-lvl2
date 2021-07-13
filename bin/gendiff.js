@@ -2,4 +2,4 @@
 
 //const { Command } = require('../');
 //const program = new Command();
-console.log('checred!')
+console.log('checred!');
