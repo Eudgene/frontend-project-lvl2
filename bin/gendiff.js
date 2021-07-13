@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const { program } = require('commander');
+import { Command } from 'commander/esm.mjs';
+const program = new Command();
 program
     .description('example')
     .version('0.0.1', '-v, --vers', 'output the current version');
