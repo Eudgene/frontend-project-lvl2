@@ -3,7 +3,7 @@
 import { Command } from 'commander/esm.mjs';
 const program = new Command();
 program
-    .description('example')
+    .description('Compares two configuration files and shows a difference')
     .version('0.0.1', '-v, --vers', 'output the current version');
 
 program.parse();
