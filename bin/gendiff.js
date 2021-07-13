@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-/*const { Command } = require('../');
-const program = new Command();
+const { program } = require('commander');
 program
     .description('example')
-    .version('0.0.1');
+    .version('0.0.1', '-v, --vers', 'output the current version');
 
-program.parse();*/
-console.log('hdhdhd');
+program.parse();
