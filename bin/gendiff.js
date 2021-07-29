@@ -10,7 +10,7 @@ program
     .argument('<filepath1> <filepath2>')
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
-        const fs = require('fs');
+        //const fs = require('fs');
         const _ = require('lodash');
         const takeObjectFromJson = (file) => {
         const read = fs.readFileSync(file, 'utf8');
