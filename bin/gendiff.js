@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander/esm.mjs';
-import fs from 'fs';
-import _ from 'lodash';
+import * as fs from 'fs';
+import * as _ from 'lodash';
 const program = new Command();
 program
     .description('Compares two configuration files and shows a difference')
