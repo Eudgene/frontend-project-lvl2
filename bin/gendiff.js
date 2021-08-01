@@ -3,6 +3,7 @@
 import { Command } from 'commander/esm.mjs';
 import * as fs from 'fs';
 import * as _ from 'lodash';
+import * as path from 'path';
 const program = new Command();
 program
     .description('Compares two configuration files and shows a difference')
@@ -13,7 +14,7 @@ program
         //const fs = require('fs');
         //const _ = require('lodash');
         //console.log(filepath1, filepath2);
-        const path = require('path');
+        //const path = require('path');
         const takeObjectFromJson = (file) => {
         const read = fs.readFileSync(file, 'utf8');
         const readJson = JSON.parse(read);
