@@ -13,6 +13,7 @@ program
         //const fs = require('fs');
         //const _ = require('lodash');
         //console.log(filepath1, filepath2);
+        const path = require('path');
         const takeObjectFromJson = (file) => {
         const read = fs.readFileSync(file, 'utf8');
         const readJson = JSON.parse(read);
