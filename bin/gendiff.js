@@ -18,8 +18,11 @@ program
         const readJson = JSON.parse(read);
             return readJson;
         }
-        const json1 = takeObjectFromJson(filepath1);
-        const json2 = takeObjectFromJson(filepath2);
+        const isAbsOrNot = (file) => {
+          return path.isAbsolute(file) ? process.cwd(file) : path.resolve(file);
+        }
+        const json1 = takeObjectFromJson(isAbsOrNot(filepath1));
+        const json2 = takeObjectFromJson(isAbsOrNot(filepath2));
         const arr = Object.keys(json1);
         const arr2 = Object.keys(json2);
         const commonArr = _.uniq(_.concat(arr, arr2));
