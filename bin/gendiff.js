@@ -15,9 +15,10 @@ program
         //const _ = require('lodash');
         //console.log(filepath1, filepath2);
         //const path = require('path');
+        console.log(typeof filepath1);
         const takeObjectFromJson = (file) => {
-        const read = fs.readFileSync(file, 'utf8');
-        const readJson = JSON.parse(read);
+          const read = fs.readFileSync(file, 'utf8');
+          const readJson = JSON.parse(read);
             return readJson;
         }
         const isAbsOrNot = (file) => {
