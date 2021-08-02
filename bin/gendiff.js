@@ -16,7 +16,7 @@ program
         //const _ = require('lodash');
         //console.log(filepath1, filepath2);
         //const path = require('path');
-        console.log(path.resolve(filepath1));
+        console.log(process.cwd(filepath1));
         const takeObjectFromJson = (file) => {
           const read = fs.readFileSync(file, 'utf8');
           const readJson = JSON.parse(read);
