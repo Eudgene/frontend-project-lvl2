@@ -12,10 +12,6 @@ program
     .argument('<filepath1> <filepath2>')
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
-        //const fs = require('fs');
-        //const _ = require('lodash');
-        //console.log(filepath1, filepath2);
-        //const path = require('path');
         console.log(process.cwd(filepath1));
         const takeObjectFromJson = (file) => {
           const read = fs.readFileSync(file, 'utf8');
@@ -23,7 +19,7 @@ program
             return readJson;
         }
         const isAbsOrNot = (file) => {
-          return path.isAbsolute(file) ? process.cwd(file) : path.resolve(file);
+          return path.isAbsolute(file) ? path.resolve(file) : process.cwd(file);
         }
         const json1 = takeObjectFromJson(isAbsOrNot(filepath1));
         const json2 = takeObjectFromJson(isAbsOrNot(filepath2));
