@@ -19,7 +19,7 @@ program
             return readJson;
         }
         const isAbsOrNot = (file) => {
-          return path.isAbsolute(file) ? path.resolve(file) : process.cwd(file);
+          return path.isAbsolute(file) ? process.cwd(file) : path.resolve(file);
         }
         const json1 = takeObjectFromJson(isAbsOrNot(filepath1));
         const json2 = takeObjectFromJson(isAbsOrNot(filepath2));
