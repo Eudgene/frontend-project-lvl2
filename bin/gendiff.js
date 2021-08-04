@@ -12,30 +12,29 @@ program
     .argument('<filepath1> <filepath2>')
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
-        console.log(process.cwd(filepath1));
-        const takeObjectFromJson = (file) => {
-          const read = fs.readFileSync(file, 'utf8');
-          const readJson = JSON.parse(read);
-            return readJson;
-        }
-        const isAbsOrNot = (file) => {
-          return path.isAbsolute(file) ? process.cwd(file) : path.resolve(file);
-        }
-        const json1 = takeObjectFromJson(isAbsOrNot(filepath1));
-        const json2 = takeObjectFromJson(isAbsOrNot(filepath2));
-        const arr = Object.keys(json1);
-        const arr2 = Object.keys(json2);
-        const commonArr = _.uniq(_.concat(arr, arr2));
-        const newResd = commonArr.map((item) => {
-          if (arr2.includes(item)) {
-            if (json1[item] === json2[item]) {
-              return `${item}: ${json1[item]}`;
-            }
-            return json1[item] ? `- ${item}: ${json1[item]} + ${item}: ${json2[item]}` : `+ ${item}: ${json2[item]}`;
+      const takeObjectFromJson = (file) => {
+        const filePath = path.isAbsolute(file) ? process.cwd(file) : path.resolve(file);
+        const read = fs.readFileSync(filePath, 'utf8');
+        const readJson = JSON.parse(read);
+        return readJson;
+      }
+      const json1 = takeObjectFromJson('bin/file1.json');
+      const json2 = takeObjectFromJson('bin/file2.json');
+      const arr = Object.keys(json1);
+      const arr2 = Object.keys(json2);
+      const commonArr = _.uniq(_.concat(arr, arr2).sort());
+      const newResd = commonArr.map((item) => {
+        if (arr2.includes(item)) {
+          if (json1[item] === json2[item]) {
+            console.log(`  ${item}: ${json1[item]}`);
+          } else {
+            const b = json1[item] ? `- ${item}: ${json1[item]}\n+ ${item}: ${json2[item]}` : `+ ${item}: ${json2[item]}`;
+          console.log(b);
           }
-          return `+ ${item}: ${json1[item]}`;
-        })
-        return newResd;
+        } else {
+          console.log(`- ${item}: ${json1[item]}`);
+        }
+      })
     });
 
 program.parse();
