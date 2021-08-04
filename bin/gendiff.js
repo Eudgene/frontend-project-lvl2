@@ -18,8 +18,8 @@ program
         const readJson = JSON.parse(read);
         return readJson;
       }
-      const json1 = takeObjectFromJson('bin/file1.json');
-      const json2 = takeObjectFromJson('bin/file2.json');
+      const json1 = takeObjectFromJson(filepath1);
+      const json2 = takeObjectFromJson(filepath2);
       const arr = Object.keys(json1);
       const arr2 = Object.keys(json2);
       const commonArr = _.uniq(_.concat(arr, arr2).sort());
