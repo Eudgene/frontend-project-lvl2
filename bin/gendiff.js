@@ -14,8 +14,8 @@ program
     .action((filepath1, filepath2) => {
       console.log(process.cwd());
       const takeObjectFromJson = (file) => {
-        const filePath = path.isAbsolute(file) ? process.cwd(file) : path.resolve(file);
-        const read = fs.readFileSync(filePath, 'utf8');
+        const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
+        const read = fs.readFileSync(filePath + file, 'utf8');
         const readJson = JSON.parse(read);
         return readJson;
       }
