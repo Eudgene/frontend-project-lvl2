@@ -13,7 +13,7 @@ program
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
       const takeObjectFromJson = (file) => {
-        console.log(toString(file));
+        console.log(file.toString());
 
         //const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
         const filePath = process.cwd();
