@@ -12,7 +12,6 @@ program
     .argument('<filepath1> <filepath2>')
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
-      console.log(process.cwd());
       const takeObjectFromJson = (file) => {
         const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
         const read = fs.readFileSync(`${filePath}/${file}`, 'utf8');
