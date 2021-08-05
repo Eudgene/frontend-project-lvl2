@@ -15,7 +15,7 @@ program
       const takeObjectFromJson = (file) => {
         //const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
         const filePath = process.cwd();
-        const fileInString = `${file}`;
+        const fileInString = JSON.stringify(file);
         console.log(fileInString, typeof fileInString);
         const read = fs.readFileSync(`${filePath}/${fileInString}`, 'utf8');
         const readJson = JSON.parse(read);
