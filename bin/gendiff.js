@@ -13,7 +13,8 @@ program
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
       const takeObjectFromJson = (file) => {
-        const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
+        //const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
+        const filePath = process.cwd();
         const read = fs.readFileSync(`${filePath}/${file}`, 'utf8');
         const readJson = JSON.parse(read);
         return readJson;
