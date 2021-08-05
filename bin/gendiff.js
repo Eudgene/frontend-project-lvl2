@@ -17,7 +17,7 @@ program
         const filePath = process.cwd();
         const fileInString = file.toString();
         console.log(fileInString, typeof fileInString);
-        const read = fs.readFileSync(`${filePath}/${fileInString}`, 'utf8');
+        const read = fs.readFileSync(`${filePath}/file1.json`, 'utf8');
         const readJson = JSON.parse(read);
         return readJson;
       }
