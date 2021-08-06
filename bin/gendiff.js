@@ -5,7 +5,7 @@ import * as fs from 'fs';
 //import * as _ from 'lodash';
 //import pkg from 'lodash';
 //const { uniq } = pkg;
-import uniq from 'lodash/uniq';
+import uniq from 'lodash/array/uniq';
 import * as path from 'path';
 import { cwd } from 'process';
 const program = new Command();
