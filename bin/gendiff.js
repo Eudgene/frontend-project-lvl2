@@ -3,6 +3,7 @@
 import { Command } from 'commander/esm.mjs';
 import * as fs from 'fs';
 import * as _ from 'lodash';
+import { uniq } from 'lodash';
 import * as path from 'path';
 import { cwd } from 'process';
 const program = new Command();
@@ -22,7 +23,7 @@ program
       const json2 = takeObjectFromJson(filepath2);
       const arr = Object.keys(json1);
       const arr2 = Object.keys(json2);
-      const commonArr = _.uniq(arr.concat(arr2).sort());
+      const commonArr = uniq(arr.concat(arr2).sort());
       const newResd = commonArr.map((item) => {
         if (arr2.includes(item)) {
           if (json1[item] === json2[item]) {
