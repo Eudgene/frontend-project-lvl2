@@ -3,7 +3,8 @@
 import { Command } from 'commander/esm.mjs';
 import * as fs from 'fs';
 import * as _ from 'lodash';
-import { uniq } from 'lodash';
+import pkg from 'lodash';
+const { uniq } = pkg;
 import * as path from 'path';
 import { cwd } from 'process';
 const program = new Command();
