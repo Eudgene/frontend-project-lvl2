@@ -13,11 +13,10 @@ program
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
       const takeObjectFromJson = (file) => {
-        //const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
-        const filePath = process.cwd();
-        const fileInString = JSON.stringify(file);
-        console.log(fileInString, typeof fileInString);
-        const read = fs.readFileSync(`${filePath}/${fileInString}`, 'utf8');
+        const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
+        //const filePath = process.cwd();
+        //const fileInString = JSON.stringify(file);
+        const read = fs.readFileSync(filePath, 'utf8');
         const readJson = JSON.parse(read);
         return readJson;
       }
