@@ -13,10 +13,7 @@ program
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
       const takeObjectFromJson = (file) => {
-        //const filePath = path.isAbsolute(file) ? path.resolve(file) : process.cwd();
         const filePath = path.isAbsolute(file) ? process.cwd() : path.resolve(file);
-        //const filePath = process.cwd();
-        //const fileInString = JSON.stringify(file);
         const read = fs.readFileSync(filePath, 'utf8');
         const readJson = JSON.parse(read);
         return readJson;
@@ -25,8 +22,7 @@ program
       const json2 = takeObjectFromJson(filepath2);
       const arr = Object.keys(json1);
       const arr2 = Object.keys(json2);
-      //const commonArr = _.uniq(arr.concat(arr2).sort());
-      const commonArr = arr.concat(arr2).sort();
+      const commonArr = _.uniq(arr.concat(arr2).sort());
       const newResd = commonArr.map((item) => {
         if (arr2.includes(item)) {
           if (json1[item] === json2[item]) {
