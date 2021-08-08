@@ -2,12 +2,10 @@
 
 import { Command } from 'commander/esm.mjs';
 import * as fs from 'fs';
-//import _ from 'lodash';
-import * as _ from 'lodash';
+import _ from 'lodash';
 import * as path from 'path';
 import { cwd } from 'process';
 const program = new Command();
-console.log(_);
 program
     .description('Compares two configuration files and shows a difference')
     .version('0.0.1', '-V, --version', 'output the version number')
