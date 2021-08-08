@@ -23,18 +23,30 @@ program
       const arr = Object.keys(json1);
       const arr2 = Object.keys(json2);
       const commonArr = _.uniq(arr.concat(arr2).sort());
+      const resArr = {};
       const newResd = commonArr.map((item) => {
-        if (arr2.includes(item)) {
-          if (json1[item] === json2[item]) {
-            console.log(`  ${item}: ${json1[item]}`);
-          } else {
-            const b = json1[item] ? `- ${item}: ${json1[item]}\n+ ${item}: ${json2[item]}` : `+ ${item}: ${json2[item]}`;
-          console.log(b);
-          }
+       if (arr2.includes(item)) {
+        if (json1[item] === json2[item]) {
+         resArr['  ' + item] = json1[item];
         } else {
-          console.log(`- ${item}: ${json1[item]}`);
+         if (json1[item]) {
+          resArr['- ' + item] = json1[item];
+          resArr['+ ' + item] = json2[item];
+         } else {
+          resArr['+ ' + item] = json2[item];
+         }
         }
+       } else {
+        resArr['+ ' + item] = json1[item];
+       }
       })
+      function replacer(key, value) {
+       if (typeof value === "string") {
+        return value;
+       }
+       return value;
+      }
+      console.log(JSON.stringify(resArr, replacer, '\t'));
     });
 
 program.parse();
