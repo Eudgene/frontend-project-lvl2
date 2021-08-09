@@ -40,6 +40,7 @@ program
         resArr['+ ' + item] = json1[item];
        }
       })
+      console.log(resArr);
       function replacer(key, value) {
        if (typeof value === "string") {
         return value;
