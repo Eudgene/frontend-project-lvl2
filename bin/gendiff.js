@@ -24,7 +24,7 @@ program
     const arr2 = Object.keys(json2);
     const commonArr = _.uniq(arr.concat(arr2).sort());
     console.log('{');
-    commonArr.map((item) => {
+    commonArr.forEach((item) => {
       if (arr2.includes(item)) {
         if (json1[item] === json2[item]) {
           console.log(`  ${item}: ${json1[item]}`);
