@@ -17,14 +17,14 @@ program
       const read = fs.readFileSync(filePath, 'utf8');
       const readJson = JSON.parse(read);
       return readJson;
-    }
+    };
     const json1 = takeObjectFromJson(filepath1);
     const json2 = takeObjectFromJson(filepath2);
     const arr = Object.keys(json1);
     const arr2 = Object.keys(json2);
     const commonArr = _.uniq(arr.concat(arr2).sort());
     console.log('{');
-    const newResd = commonArr.map((item) => {
+    commonArr.map((item) => {
       if (arr2.includes(item)) {
         if (json1[item] === json2[item]) {
           console.log(`  ${item}: ${json1[item]}`);
@@ -35,10 +35,8 @@ program
       } else {
         console.log(`- ${item}: ${json1[item]}`);
       }
-    })
+    });
     console.log('}');
-});
+  });
 
 program.parse();
-
-//export default program;
