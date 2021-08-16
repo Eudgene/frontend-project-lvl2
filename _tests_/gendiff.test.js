@@ -1,6 +1,5 @@
-import func from '../bin/gendiff.js';
+import action from '../bin/gendiff.js';
 
-test('func', () => {
-    const str = 'hello';
-    expect(func(str)).toEqual('olleh');
-  })
+test('action', () => {
+    expect(action(filepath1, filepath2)).toEqual('olleh');
+})
