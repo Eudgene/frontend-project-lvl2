@@ -7,3 +7,5 @@ gendiff:
 	node bin/gendiff.js
 lint:
 	npx eslint .
+jest:
+	npx jest
