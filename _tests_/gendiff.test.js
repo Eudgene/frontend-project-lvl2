@@ -7,7 +7,7 @@ import * as func from '../bin/gendiff.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', 'bin', filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 test('file type', () => {
