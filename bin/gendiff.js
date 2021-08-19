@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import _ from 'lodash';
 import * as path from 'path';
 
-export const program = new Command();
+const program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
   .version('0.0.1', '-V, --version', 'output the version number')
@@ -40,3 +40,5 @@ program
   });
 
 program.parse();
+
+export default program;
