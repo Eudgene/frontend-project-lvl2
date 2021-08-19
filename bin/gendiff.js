@@ -5,14 +5,14 @@ import * as fs from 'fs';
 import _ from 'lodash';
 import * as path from 'path';
 
-const program = new Command();
+export const program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
   .version('0.0.1', '-V, --version', 'output the version number')
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
-    export const takeObjectFromJson = (file) => {
+      const takeObjectFromJson = (file) => {
       const filePath = path.isAbsolute(file) ? process.cwd() : path.resolve(file);
       const read = fs.readFileSync(filePath, 'utf8');
       const readJson = JSON.parse(read);
