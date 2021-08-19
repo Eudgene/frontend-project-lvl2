@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
-import { takeObjectFromJson } from '../bin/gendiff.js';
+import * as func from '../bin/gendiff.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,6 +16,6 @@ test('file type', () => {
 })
 
 test('takeObjectFromJson result type', () => {
-  const obj = takeObjectFromJson('file1.json');
+  const obj = func.takeObjectFromJson('file1.json');
   expect(typeof obj).toEqual('object');
 })
