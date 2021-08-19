@@ -40,3 +40,5 @@ program
   });
 
 program.parse();
+
+export { takeObjectFromJson };
