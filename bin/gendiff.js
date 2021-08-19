@@ -12,7 +12,7 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
-    const takeObjectFromJson = (file) => {
+    export const takeObjectFromJson = (file) => {
       const filePath = path.isAbsolute(file) ? process.cwd() : path.resolve(file);
       const read = fs.readFileSync(filePath, 'utf8');
       const readJson = JSON.parse(read);
@@ -40,5 +40,3 @@ program
   });
 
 program.parse();
-
-export { takeObjectFromJson };
