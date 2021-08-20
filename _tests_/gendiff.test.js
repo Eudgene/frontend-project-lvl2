@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
-import * as func from '../bin/gendiff.js';
+import * as func from '../bin/gendiff';
 
 const _filename = fileURLToPath(import.meta.url);
 const _dirname = dirname(_filename);
