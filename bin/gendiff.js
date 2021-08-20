@@ -39,6 +39,5 @@ program
     console.log('}');
   });
 
-program.parse();
-
 export default program;
+program.parse();
