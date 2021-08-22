@@ -39,5 +39,4 @@ program
     console.log('}');
   });
 
-//export default program;
 program.parse();
