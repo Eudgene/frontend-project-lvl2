@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import * as fs from 'fs';
+//import * as fs from 'fs';
 import _ from 'lodash';
-import * as path from 'path';
+//import * as path from 'path';
+import takeObjectFromJson from '../bin/funcs.js';
 
 const program = new Command();
 program
@@ -12,12 +13,12 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
-    const takeObjectFromJson = (file) => {
+    /*const takeObjectFromJson = (file) => {
       const filePath = path.isAbsolute(file) ? process.cwd() : path.resolve(file);
       const read = fs.readFileSync(filePath, 'utf8');
       const readJson = JSON.parse(read);
       return readJson;
-    };
+    };*/
     const json1 = takeObjectFromJson(filepath1);
     const json2 = takeObjectFromJson(filepath2);
     const arr = Object.keys(json1);
