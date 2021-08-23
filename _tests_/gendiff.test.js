@@ -17,5 +17,7 @@ test('file type', () => {
 
 test('takeObjectFromJson result type', () => {
   const obj = takeObjectFromJson('file1.json');
+  const obj2 = takeObjectFromJson('file1.json');
   expect(typeof obj).toEqual('object');
+  expect(typeof obj2).toEqual('object');
 });
