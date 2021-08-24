@@ -3,6 +3,7 @@ import * as path from 'path';
 
 const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? process.cwd() : path.resolve(file);
+  console.log(filePath);
   const read = fs.readFileSync(filePath, 'utf8');
   const readJson = JSON.parse(read);
   return readJson;
