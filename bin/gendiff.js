@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 import _ from 'lodash';
-import takeObjectFromJson from '../funcs.js';
+import takeObjectFromJson from '../bin/funcs.js';
 
 const program = new Command();
 program
