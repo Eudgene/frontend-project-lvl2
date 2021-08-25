@@ -28,6 +28,6 @@ test('takeObjectFromJson result type', () => {
   expect(typeof obj).toEqual('object');
   expect(typeof obj2).toEqual('object');
   expect(typeof obj3).toEqual('object');
-  expect(obj1).toEqual(example1);
+  expect(obj).toEqual(example1);
   expect(obj3).toEqual(example1);
 });
