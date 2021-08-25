@@ -10,10 +10,10 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 const example1 = {
-  "host": "hexlet.io",
-  "timeout": 50,
-  "proxy": "123.234.53.22",
-  "follow": false
+  'host': 'hexlet.io',
+  'timeout': 50,
+  'proxy': '123.234.53.22',
+  'follow': false,
 };
 
 test('file type', () => {
