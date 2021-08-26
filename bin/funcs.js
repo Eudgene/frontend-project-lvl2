@@ -8,4 +8,24 @@ const takeObjectFromJson = (file) => {
   return readJson;
 };
 
+export const newResd = (startArray, finArray ) => {
+  startArray.map((item) => {
+    if (arr2.includes(item)) {
+      if (json1[item] === json2[item]) {
+        finArray.push(`  ${item}: ${json1[item]}`);
+      } else {
+        if (json1[item]) {
+          finArray.push(`- ${item}: ${json1[item]}`);
+          finArray.push(`+ ${item}: ${json2[item]}`);
+        } else {
+          finArray.push(`+ ${item}: ${json2[item]}`);
+        }
+      }
+    } else {
+      finArray.push(`- ${item}: ${json1[item]}`);
+    }
+  })
+  return finArray;
+};
+
 export default takeObjectFromJson;
