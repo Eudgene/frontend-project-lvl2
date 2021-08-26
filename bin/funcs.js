@@ -8,22 +8,22 @@ const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-export const newResd = (startArray, finArray) => {
-  console.log(startArray, finArray);
+export const newResd = (startArray, finArray, js1, js2) => {
+  const arr2 = Object.keys(js2);
   startArray.map((item) => {
     if (arr2.includes(item)) {
-      if (json1[item] === json2[item]) {
-        finArray.push(`  ${item}: ${json1[item]}`);
+      if (js1[item] === js2[item]) {
+        finArray.push(`  ${item}: ${js1[item]}`);
       } else {
-        if (json1[item]) {
-          finArray.push(`- ${item}: ${json1[item]}`);
-          finArray.push(`+ ${item}: ${json2[item]}`);
+        if (js1[item]) {
+          finArray.push(`- ${item}: ${js1[item]}`);
+          finArray.push(`+ ${item}: ${js2[item]}`);
         } else {
-          finArray.push(`+ ${item}: ${json2[item]}`);
+          finArray.push(`+ ${item}: ${js2[item]}`);
         }
       }
     } else {
-      finArray.push(`- ${item}: ${json1[item]}`);
+      finArray.push(`- ${item}: ${js1[item]}`);
     }
   })
   return finArray;

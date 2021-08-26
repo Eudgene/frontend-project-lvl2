@@ -19,7 +19,7 @@ program
     const commonArr = _.uniq(arr.concat(arr2).sort());
     console.log(commonArr);
     const finishedArray = [];
-    const newArr = newResd(commonArr, finishedArray);
+    const newArr = newResd(commonArr, finishedArray, json1, json2);
     console.log('{');
     newArr.map((item) => console.log(item));
     console.log('}');
