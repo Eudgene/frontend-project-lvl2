@@ -17,6 +17,7 @@ program
     const arr = Object.keys(json1);
     const arr2 = Object.keys(json2);
     const commonArr = _.uniq(arr.concat(arr2).sort());
+    console.log(commonArr);
     const finishedArray = [];
     const newArr = newResd(commonArr, finishedArray);
     console.log('{');
