@@ -1,4 +1,5 @@
-import { fileURLToPath } from 'url';
+//import { fileURLToPath } from 'url';
+import * as fileURLToPath from 'url';
 import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
