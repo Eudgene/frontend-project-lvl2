@@ -9,6 +9,7 @@ const takeObjectFromJson = (file) => {
 };
 
 export const newResd = (startArray, finArray) => {
+  console.log(startArray, finArray);
   startArray.map((item) => {
     if (arr2.includes(item)) {
       if (json1[item] === json2[item]) {
