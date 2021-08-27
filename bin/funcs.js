@@ -29,6 +29,7 @@ const newResd = (filepath1, filepath2) => {
     } else {
       finishedArray.push(`- ${item}: ${json1[item]}`);
     }
+    return finishedArray;
   });
   return finishedArray;
 };
