@@ -20,18 +20,17 @@ const newResd = (filepath1, filepath2) => {
     if (arr2.includes(item)) {
       if (json1[item] === json2[item]) {
         finishedArray.push(`  ${item}: ${json1[item]}`);
+      }
+      if (json1[item]) {
+        finishedArray.push(`- ${item}: ${json1[item]}`);
+        finishedArray.push(`+ ${item}: ${json2[item]}`);
       } else {
-        if (json1[item]) {
-          finishedArray.push(`- ${item}: ${json1[item]}`);
-          finishedArray.push(`+ ${item}: ${json2[item]}`);
-        } else {
-          finishedArray.push(`+ ${item}: ${json2[item]}`);
-        }
+        finishedArray.push(`+ ${item}: ${json2[item]}`);
       }
     } else {
       finishedArray.push(`- ${item}: ${json1[item]}`);
     }
-  })
+  });
   return finishedArray;
 };
 
