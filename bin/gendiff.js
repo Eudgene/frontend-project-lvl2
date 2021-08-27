@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import _ from 'lodash';
 import newResd from '../bin/funcs.js';
 
 const program = new Command();

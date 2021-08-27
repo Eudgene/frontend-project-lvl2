@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import _ from 'lodash';
 
 const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
