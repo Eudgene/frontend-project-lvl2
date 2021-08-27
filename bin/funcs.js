@@ -8,25 +8,31 @@ const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-export const newResd = (startArray, finArray, js1, js2) => {
+const newResd = (filepath1, filepath2) => {
+  const json1 = takeObjectFromJson(filepath1);
+  const json2 = takeObjectFromJson(filepath2);
+  const arr = Object.keys(json1);
+  const arr2 = Object.keys(json2);
+  const commonArr = _.uniq(arr.concat(arr2).sort());
+  const finishedArray = [];
   const arr2 = Object.keys(js2);
-  startArray.map((item) => {
+  commonArr.map((item) => {
     if (arr2.includes(item)) {
-      if (js1[item] === js2[item]) {
-        finArray.push(`  ${item}: ${js1[item]}`);
+      if (json1[item] === json2[item]) {
+        finishedArray.push(`  ${item}: ${json1[item]}`);
       } else {
-        if (js1[item]) {
-          finArray.push(`- ${item}: ${js1[item]}`);
-          finArray.push(`+ ${item}: ${js2[item]}`);
+        if (json1[item]) {
+          finishedArray.push(`- ${item}: ${json1[item]}`);
+          finishedArray.push(`+ ${item}: ${json2[item]}`);
         } else {
-          finArray.push(`+ ${item}: ${js2[item]}`);
+          finishedArray.push(`+ ${item}: ${json2[item]}`);
         }
       }
     } else {
-      finArray.push(`- ${item}: ${js1[item]}`);
+      finishedArray.push(`- ${item}: ${json1[item]}`);
     }
   })
-  return finArray;
+  return finishedArray;
 };
 
-export default takeObjectFromJson;
+export default newResd;
