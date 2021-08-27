@@ -16,7 +16,7 @@ const newResd = (filepath1, filepath2) => {
   const arr2 = Object.keys(json2);
   const commonArr = _.uniq(arr.concat(arr2).sort());
   const finishedArray = [];
-  const newArr = commonArr.map((item) => {
+  commonArr.map((item) => {
     if (arr2.includes(item)) {
       if (json1[item] === json2[item]) {
         finishedArray.push(`  ${item}: ${json1[item]}`);
@@ -30,7 +30,7 @@ const newResd = (filepath1, filepath2) => {
       finishedArray.push(`- ${item}: ${json1[item]}`);
     }
   });
-  return newArr;
+  return finishedArray;
 };
 
 export default newResd;
