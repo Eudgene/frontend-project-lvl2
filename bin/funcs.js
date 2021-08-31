@@ -4,7 +4,6 @@ import _ from 'lodash';
 
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
-  console.log(process.cwd());
   const read = fs.readFileSync(`${filePath}`, 'utf8');
   const readJson = JSON.parse(read);
   return readJson;
