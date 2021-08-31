@@ -7,5 +7,5 @@ gendiff:
 	node bin/gendiff.js
 lint:
 	npx eslint .
-jest:
-	npx jest
+test:
+	npx -n --experimental-vm-modules jest
