@@ -20,12 +20,12 @@ test('takeObjectFromJson result type', () => {
   const res2 = JSON.parse(readFile('file2.json'));
   const obj = takeObjectFromJson('file1.json');
   const obj2 = takeObjectFromJson('file2.json');
-  const obj3 = takeObjectFromJson('/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/file1.json');
+  //const obj3 = takeObjectFromJson('/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/file1.json');
   expect(typeof obj).toEqual('object');
   expect(typeof obj2).toEqual('object');
-  expect(typeof obj3).toEqual('object');
+  //expect(typeof obj3).toEqual('object');
   expect(obj).toEqual(res);
-  expect(obj3).toEqual(res);
+  //expect(obj3).toEqual(res);
   expect(obj2).toEqual(res2);
 });
 
