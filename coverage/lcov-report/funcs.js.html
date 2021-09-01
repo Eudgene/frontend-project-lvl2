@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.09% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/23</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.09% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/23</span>
+                <span class='fraction'>23/23</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -99,35 +99,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,29 +142,29 @@ export const takeObjectFromJson = (file) =&gt; {
   return readJson;
 };
 &nbsp;
-const newResd = <span class="fstat-no" title="function not covered" >(f</span>ilepath1, filepath2) =&gt; {
-  const json1 = <span class="cstat-no" title="statement not covered" >takeObjectFromJson(filepath1);</span>
-  const json2 = <span class="cstat-no" title="statement not covered" >takeObjectFromJson(filepath2);</span>
-  const arr = <span class="cstat-no" title="statement not covered" >Object.keys(json1);</span>
-  const arr2 = <span class="cstat-no" title="statement not covered" >Object.keys(json2);</span>
-  const commonArr = <span class="cstat-no" title="statement not covered" >_.uniq(arr.concat(arr2).sort());</span>
-  const finishedArray = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  commonArr.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (arr2.includes(item)) {</span>
-<span class="cstat-no" title="statement not covered" >      if (json1[item] === json2[item]) {</span>
-<span class="cstat-no" title="statement not covered" >        finishedArray.push(`  ${item}: ${json1[item]}`);</span>
-      } else <span class="cstat-no" title="statement not covered" >if (json1[item]) {</span>
-<span class="cstat-no" title="statement not covered" >        finishedArray.push(`- ${item}: ${json1[item]}`);</span>
-<span class="cstat-no" title="statement not covered" >        finishedArray.push(`+ ${item}: ${json2[item]}`);</span>
+const newResd = (filepath1, filepath2) =&gt; {
+  const json1 = takeObjectFromJson(filepath1);
+  const json2 = takeObjectFromJson(filepath2);
+  const arr = Object.keys(json1);
+  const arr2 = Object.keys(json2);
+  const commonArr = _.uniq(arr.concat(arr2).sort());
+  const finishedArray = [];
+  commonArr.map((item) =&gt; {
+    if (arr2.includes(item)) {
+      if (json1[item] === json2[item]) {
+        finishedArray.push(`  ${item}: ${json1[item]}`);
+      } else if (json1[item]) {
+        finishedArray.push(`- ${item}: ${json1[item]}`);
+        finishedArray.push(`+ ${item}: ${json2[item]}`);
       } else {
-<span class="cstat-no" title="statement not covered" >        finishedArray.push(`+ ${item}: ${json2[item]}`);</span>
+        finishedArray.push(`+ ${item}: ${json2[item]}`);
       }
     } else {
-<span class="cstat-no" title="statement not covered" >      finishedArray.push(`- ${item}: ${json1[item]}`);</span>
+      finishedArray.push(`- ${item}: ${json1[item]}`);
     }
-<span class="cstat-no" title="statement not covered" >    return finishedArray;</span>
+    return finishedArray;
   });
-<span class="cstat-no" title="statement not covered" >  return finishedArray;</span>
+  return finishedArray;
 };
 &nbsp;
 export default newResd;
@@ -175,7 +175,7 @@ export default newResd;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 31 2021 08:12:37 GMT+0300 (Moscow Standard Time)
+                at Wed Sep 01 2021 08:45:30 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
