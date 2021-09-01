@@ -3,18 +3,13 @@ import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
 import { takeObjectFromJson } from '../bin/funcs.js';
+import newResd from '../bin/funcs.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
-const example1 = {
-  host: 'hexlet.io',
-  timeout: 50,
-  proxy: '123.234.53.22',
-  follow: false,
-};
 
 test('file type', () => {
   const res = readFile('file1.json');
@@ -33,4 +28,9 @@ test('takeObjectFromJson result type', () => {
   expect(obj).toEqual(res);
   expect(obj3).toEqual(res);
   expect(obj2).toEqual(res2);
+});
+
+test('Chacked newResd', () => {
+  const res = newResd('file1.json', 'file2.json');
+  expect(typeof res).toEqual('array');
 });
