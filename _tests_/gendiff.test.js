@@ -32,5 +32,6 @@ test('takeObjectFromJson result type', () => {
 
 test('Chacked newResd', () => {
   const res = newResd('file1.json', 'file2.json');
-  expect(typeof res).toEqual('array');
+  console.log(res);
+  expect(typeof res).toEqual('object');
 });
