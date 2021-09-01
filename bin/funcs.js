@@ -9,7 +9,7 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-const newResd = (filepath1, filepath2) => {
+export const newResd = (filepath1, filepath2) => {
   const json1 = takeObjectFromJson(filepath1);
   const json2 = takeObjectFromJson(filepath2);
   const arr = Object.keys(json1);
@@ -33,5 +33,3 @@ const newResd = (filepath1, filepath2) => {
   });
   return finishedArray;
 };
-
-export default newResd;

@@ -2,8 +2,7 @@ import { fileURLToPath } from 'url';
 import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
-import { takeObjectFromJson } from '../bin/funcs.js';
-import newResd from '../bin/funcs.js';
+import { takeObjectFromJson, newResd } from '../bin/funcs.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
