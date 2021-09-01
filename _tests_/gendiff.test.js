@@ -18,7 +18,6 @@ const example1 = {
 
 test('file type', () => {
   const res = readFile('file1.json');
-  console.log(res);
   expect(typeof res).toEqual('string');
 });
 
