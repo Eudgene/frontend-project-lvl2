@@ -12,6 +12,7 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 test('file type', () => {
   const res = readFile('file1.json');
+  console.log(res);
   expect(typeof res).toEqual('string');
 });
 
