@@ -1,4 +1,4 @@
-const parsFunc = (pathFile) => {
+export const parsFunc = (pathFile) => {
   const format = path.extname(pathFile);
   let result;
   if (format === '.json') {
