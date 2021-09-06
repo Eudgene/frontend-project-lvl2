@@ -3,6 +3,7 @@ import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
 import { takeObjectFromJson, newResd } from '../bin/funcs.js';
+import { parsFunc } from '../bin/funcs.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -35,6 +36,6 @@ test('Chacked newResd', () => {
 });
 
 test('parsers', () => {
-  const res = newResd('file1.json', 'file2.json');
+  const res = parsFunc(getFixturePath('file1.json'));
   expect(typeof res).toEqual('object');
 });
