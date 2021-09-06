@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 export const parsFunc = (pathFile) => {
   const format = path.extname(pathFile);
   let result;
