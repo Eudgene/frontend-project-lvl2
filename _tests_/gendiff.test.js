@@ -3,7 +3,7 @@ import * as path from 'path';
 import { dirname } from 'path';
 import * as fs from 'fs';
 import { takeObjectFromJson, newResd } from '../bin/funcs.js';
-import { parsFunc } from '../bin/funcs.js';
+import { parsFunc } from '../bin/parsers.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
