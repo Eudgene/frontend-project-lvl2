@@ -11,12 +11,12 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-test('file type', () => {
+test('File type', () => {
   const res = readFile('file1.json');
   expect(typeof res).toEqual('string');
 });
 
-test('takeObjectFromJson result type', () => {
+test('TakeObjectFromJson result type', () => {
   const res = JSON.parse(readFile('file1.json'));
   const res2 = JSON.parse(readFile('file2.json'));
   const obj = takeObjectFromJson('file1.json');
@@ -35,7 +35,7 @@ test('Chacked newResd', () => {
   expect(typeof res).toEqual('object');
 });
 
-test('parsers', () => {
+test('Parsers', () => {
   const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
   const res2 = parsFunc(readFile('filepath1.yml'), getFixturePath('filepath1.yml'));
   expect(typeof res).toEqual('object');
