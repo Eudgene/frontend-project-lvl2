@@ -36,7 +36,6 @@ test('Chacked newResd', () => {
 });
 
 test('parsers', () => {
-  const filePath = getFixturePath('file1.json');
-  const res = parsFunc(readFile(filePath), filePath);
+  const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
   expect(typeof res).toEqual('object');
 });
