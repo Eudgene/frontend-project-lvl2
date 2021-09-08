@@ -8,6 +8,5 @@ export const parsFunc = (file, pathFile) => {
   } else if (format === '.yml' || format === '.yaml') {
     result = yaml.safeLoad(file);
   }
-  console.log(result);
   return result;
 }
