@@ -41,5 +41,5 @@ test('Parsers', () => {
   const res3 = parsFunc(readFile('filepath1.yaml'), getFixturePath('filepath1.yaml'));
   expect(typeof res).toEqual('object');
   expect(typeof res2).toEqual('object');
-  expect(typeof res2).toEqual('object');
+  expect(typeof res3).toEqual('object');
 });
