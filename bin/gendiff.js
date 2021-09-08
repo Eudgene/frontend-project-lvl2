@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { newResd } from '../bin/funcs.js';
+import { newResd } from './funcs.js';
 
 const program = new Command();
 program
