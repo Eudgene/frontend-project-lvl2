@@ -1,12 +1,12 @@
 import * as path from 'path';
 
-export const parsFunc = (pathFile) => {
+export const parsFunc = (file, pathFile) => {
   const format = path.extname(pathFile);
   let result;
   if (format === '.json') {
-    result = JSON.parse(pathFile);
+    result = JSON.parse(file);
   } else if (format === '.yml' || format === '.yaml') {
-    result = yaml.safeLoad(pathFile);
+    result = yaml.safeLoad(file);
   }
   console.log(result);
   return result;

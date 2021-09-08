@@ -6,7 +6,7 @@ import { parsFunc } from '../bin/parsers.js';
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
   const read = fs.readFileSync(`${filePath}`, 'utf8');
-  const readJson = parsFunc(read);
+  const readJson = parsFunc(read, filePath);
   return readJson;
 };
 
