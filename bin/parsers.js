@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-export const parsFunc = (file, pathFile) => {
+const parsFunc = (file, pathFile) => {
   const format = path.extname(pathFile);
   let result;
   if (format === '.json') {
@@ -9,4 +9,6 @@ export const parsFunc = (file, pathFile) => {
     result = yaml.safeLoad(file);
   }
   return result;
-}
+};
+
+export default parsFunc;
