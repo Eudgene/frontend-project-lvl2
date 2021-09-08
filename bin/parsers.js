@@ -7,7 +7,7 @@ const parsFunc = (file, pathFile) => {
   if (format === '.json') {
     result = JSON.parse(file);
   } else if (format === '.yml' || format === '.yaml') {
-    result = yaml.safeLoad(file);
+    result = yaml.load(file);
   }
   return result;
 };
