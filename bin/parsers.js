@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as yaml from 'yaml';
 
 const parsFunc = (file, pathFile) => {
   const format = path.extname(pathFile);
