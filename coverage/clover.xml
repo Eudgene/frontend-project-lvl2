@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1631079970670" clover="3.2.0">
-  <project timestamp="1631079970670" name="All files">
+<coverage generated="1631080232757" clover="3.2.0">
+  <project timestamp="1631080232758" name="All files">
     <metrics statements="30" coveredstatements="30" conditionals="14" coveredconditionals="12" methods="4" coveredmethods="4" elements="48" coveredelements="46" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
     <file name="funcs.js" path="/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/bin/funcs.js">
       <metrics statements="23" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
