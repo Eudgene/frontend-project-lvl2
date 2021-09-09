@@ -28,6 +28,7 @@ test('TakeObjectFromJson result type', () => {
   expect(obj).toEqual(res);
   expect(obj3).toEqual(res);
   expect(obj2).toEqual(res2);
+  expect(() => takeObjectFromJson('file1.js')).toThrow();
 });
 
 test('Chacked newResd', () => {
