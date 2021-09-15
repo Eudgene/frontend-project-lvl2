@@ -39,8 +39,8 @@ test('Chacked newResd', () => {
 
 test('Parsers', () => {
   const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
-  const res2 = parsFunc(readFile('filepath1.yml'), getFixturePath('filepath1.yml'));
+  const res2 = parsFunc(readFile('file1.yml'), getFixturePath('file1.yml'));
   expect(typeof res).toEqual('object');
   expect(typeof res2).toEqual('object');
-  expect(() => parsFunc(readFile('filepath1.ml'), getFixturePath('filepath1.ml'))).toThrow();
+  expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
 });
