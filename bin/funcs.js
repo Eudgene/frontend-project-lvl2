@@ -5,7 +5,7 @@ import parsFunc from './parsers.js';
 
 const isObject = (obj) => {
   const type = typeof obj;
-  if(type === 'object') {
+  if(type === 'object' && obj !== null) {
     return true;
   }
   return false;
@@ -35,11 +35,8 @@ export const takeObjectFromJson = (file) => {
 export const newResd = (filepath1, filepath2) => {
   const json1 = takeObjectFromJson(filepath1);
   const json2 = takeObjectFromJson(filepath2);
-  //const arr = goOnTree(json1);
-  //const arr2 = goOnTree(json2);
-  const arr = Object.keys(json1);
-  const arr2 = Object.keys(json2);
-  console.log(goOnTree(json2),arr2);
+  const arr = goOnTree(json1);
+  const arr2 = goOnTree(json2);
   const commonArr = _.uniq(arr.concat(arr2).sort());
   const finishedArray = [];
   commonArr.map((item) => {
