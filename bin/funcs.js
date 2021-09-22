@@ -39,10 +39,8 @@ export const newResd = (filepath1, filepath2) => {
   //const arr2 = goOnTree(json2);
   const arr = Object.keys(json1);
   const arr2 = Object.keys(json2);
-  console.log(goOnTree(json1),arr);
-  
+  console.log(goOnTree(json2),arr2);
   const commonArr = _.uniq(arr.concat(arr2).sort());
-  
   const finishedArray = [];
   commonArr.map((item) => {
     if (arr2.includes(item)) {
