@@ -17,6 +17,7 @@ const goOnTree = (tree) => {
     .map((item) => {
     if(isObject(tree[item])) {
       result.push(`${item}`);
+      console.log(tree[item]);
       goOnTree(tree[item]);
     } else {
       result.push(`${item}: ${tree[item]}`);
@@ -35,7 +36,6 @@ export const takeObjectFromJson = (file) => {
 export const newResd = (filepath1, filepath2) => {
   const json1 = takeObjectFromJson(filepath1);
   const json2 = takeObjectFromJson(filepath2);
-  console.log(json1, json2);
   const arr = goOnTree(json1);
   const arr2 = goOnTree(json2);
   const commonArr = _.uniq(arr.concat(arr2).sort());
