@@ -37,7 +37,7 @@ export const newResd = (filepath1, filepath2) => {
   const json2 = takeObjectFromJson(filepath2);
   const arr = goOnTree(json1);
   const arr2 = goOnTree(json2);
-  console.log(arr.concat(arr2).sort());
+  console.log(json1);
   const commonArr = _.uniq(arr.concat(arr2).sort());
   
   const finishedArray = [];
