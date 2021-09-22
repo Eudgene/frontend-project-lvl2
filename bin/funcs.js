@@ -5,7 +5,7 @@ import parsFunc from './parsers.js';
 
 const isObject = (obj) => {
   const type = typeof obj;
-  if(type === 'object' && type !== null) {
+  if(type === 'object') {
     return true;
   }
   return false;
