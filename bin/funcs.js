@@ -13,6 +13,7 @@ const isObject = (obj) => {
 
 const result = [];
 const goOnTree = (tree) => {
+  console.log(tree);
   const keys = Object.keys(tree)
     .map((item) => {
     if(isObject(tree[item])) {
