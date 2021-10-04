@@ -3,28 +3,6 @@ import * as path from 'path';
 import _ from 'lodash';
 import parsFunc from './parsers.js';
 
-const isObject = (obj) => {
-  const type = typeof obj;
-  if(type === 'object' && obj !== null) {
-    return true;
-  }
-  return false;
-};
-
-const result = [];
-const goOnTree = (tree) => {
-  const keys = Object.keys(tree)
-    .map((item) => {
-    if(isObject(tree[item])) {
-      result.push(`${item}`);
-      goOnTree(tree[item]);
-    } else {
-      result.push(`${item}: ${tree[item]}`);
-    }
-  });
-  return result;
-};
-
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
   const read = fs.readFileSync(`${filePath}`, 'utf8');
@@ -32,7 +10,7 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-export const newResd = (filepath1, filepath2) => {
+/*export const newResd = (filepath1, filepath2) => {
   const json1 = takeObjectFromJson(filepath1);
   const json2 = takeObjectFromJson(filepath2);
   const arr = goOnTree(json1);
@@ -54,6 +32,48 @@ export const newResd = (filepath1, filepath2) => {
       finishedArray.push(`- ${item}: ${json1[item]}`);
     }
     return finishedArray;
+  });
+  return finishedArray;
+};*/
+
+const newResd = (tree, tree1) => {
+  const keys1 = Object.keys(tree1);
+  const keys = Object.keys(tree);
+  const finishedArray = {};
+  const commonArr = _.uniq(keys.concat(keys1).sort())
+    .map((item) => {
+      if(keys1.includes(item)) {
+        if(_.isPlainObject(tree1[item])) {
+          if(tree[item]) {
+            const newItem = `  ${item}`;
+            finishedArray[newItem] = newResd(tree[item], tree1[item]);
+          } else {
+            const newItem1 = `+ ${item}`;
+            finishedArray[newItem1] = tree1[item];
+          }
+        } else {
+          if (tree[item] === tree1[item]) {
+            const newItem = `  ${item}`;
+            finishedArray[newItem] = tree[item];
+          } else if(tree[item]) {
+            const newItem = `- ${item}`;
+            const newItem1 = `+ ${item}`;
+            finishedArray[newItem] = tree[item];
+            finishedArray[newItem1] = tree1[item];
+          } else {
+            const newItem1 = `+ ${item}`;
+            finishedArray[newItem1] = tree1[item];
+          }
+        }
+      } else {
+        if(_.isPlainObject(tree[item])) {
+          const newItem = `- ${item}`;
+          finishedArray[newItem] = tree[item];
+        } else {
+          const newItem1 = `- ${item}`;
+          finishedArray[newItem1] = tree[item];
+        }
+      }
   });
   return finishedArray;
 };
