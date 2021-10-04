@@ -11,9 +11,7 @@ program
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
     const newArr = newResd(filepath1, filepath2);
-    console.log('{');
-    newArr.map((item) => console.log(item));
-    console.log('}');
+    JSON.stringify(newArr, null, 2)
   });
 
 program.parse();
