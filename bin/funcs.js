@@ -36,7 +36,6 @@ export const takeObjectFromJson = (file) => {
   return finishedArray;
 };*/
 
-
 export const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
   const keys = Object.keys(tree);

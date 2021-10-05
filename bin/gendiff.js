@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { newResd } from './funcs.js';
+import { newResd, takeObjectFromJson } from './funcs.js';
+
 
 const program = new Command();
 program
