@@ -10,32 +10,6 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-/*export const newResd = (filepath1, filepath2) => {
-  const json1 = takeObjectFromJson(filepath1);
-  const json2 = takeObjectFromJson(filepath2);
-  const arr = goOnTree(json1);
-  const arr2 = goOnTree(json2);
-  const commonArr = _.uniq(arr.concat(arr2).sort());
-  console.log(commonArr);
-  const finishedArray = [];
-  commonArr.map((item) => {
-    if (arr2.includes(item)) {
-      if (json1[item] === json2[item]) {
-        finishedArray.push(`  ${item}: ${json1[item]}`);
-      } else if (json1[item]) {
-        finishedArray.push(`- ${item}: ${json1[item]}`);
-        finishedArray.push(`+ ${item}: ${json2[item]}`);
-      } else {
-        finishedArray.push(`+ ${item}: ${json2[item]}`);
-      }
-    } else {
-      finishedArray.push(`- ${item}: ${json1[item]}`);
-    }
-    return finishedArray;
-  });
-  return finishedArray;
-};*/
-
 export const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
   const keys = Object.keys(tree);
