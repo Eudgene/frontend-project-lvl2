@@ -36,11 +36,10 @@ export const takeObjectFromJson = (file) => {
   return finishedArray;
 };*/
 
+
 export const newResd = (tree, tree1) => {
-  const json1 = takeObjectFromJson(tree);
-  const json2 = takeObjectFromJson(tree1);
-  const keys1 = Object.keys(json2);
-  const keys = Object.keys(json1);
+  const keys1 = Object.keys(tree1);
+  const keys = Object.keys(tree);
   const finishedArray = {};
   const commonArr = _.uniq(keys.concat(keys1).sort())
     .map((item) => {
