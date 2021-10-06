@@ -15,7 +15,7 @@ export const newResd = (tree, tree1) => {
   const keys = Object.keys(tree);
   const finishedArray = {};
   const commonArr = _.uniq(keys.concat(keys1).sort());
-  commonArr.map((item) => {
+  commonArr.forEach((item) => {
     if (keys1.includes(item)) {
       if (_.isPlainObject(tree1[item])) {
         if (tree[item]) {
