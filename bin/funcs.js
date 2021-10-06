@@ -16,38 +16,38 @@ export const newResd = (tree, tree1) => {
   const finishedArray = {};
   const commonArr = _.uniq(keys.concat(keys1).sort());
   commonArr.map((item) => {
-      if (keys1.includes(item)) {
-        if (_.isPlainObject(tree1[item])) {
-          if (tree[item]) {
-            const newItem = `  ${item}`;
-            finishedArray[newItem] = newResd(tree[item], tree1[item]);
-          } else {
-            const newItem1 = `+ ${item}`;
-            finishedArray[newItem1] = tree1[item];
-          }
+    if (keys1.includes(item)) {
+      if (_.isPlainObject(tree1[item])) {
+        if (tree[item]) {
+          const newItem = `  ${item}`;
+          finishedArray[newItem] = newResd(tree[item], tree1[item]);
         } else {
-          if (tree[item] === tree1[item]) {
-            const newItem = `  ${item}`;
-            finishedArray[newItem] = tree[item];
-          } else if (tree[item]) {
-            const newItem = `- ${item}`;
-            const newItem1 = `+ ${item}`;
-            finishedArray[newItem] = tree[item];
-            finishedArray[newItem1] = tree1[item];
-          } else {
-            const newItem1 = `+ ${item}`;
-            finishedArray[newItem1] = tree1[item];
-          }
+          const newItem1 = `+ ${item}`;
+          finishedArray[newItem1] = tree1[item];
         }
       } else {
-        if (_.isPlainObject(tree[item])) {
-          const newItem = `- ${item}`;
+        if (tree[item] === tree1[item]) {
+          const newItem = `  ${item}`;
           finishedArray[newItem] = tree[item];
+        } else if (tree[item]) {
+          const newItem = `- ${item}`;
+          const newItem1 = `+ ${item}`;
+          finishedArray[newItem] = tree[item];
+          finishedArray[newItem1] = tree1[item];
         } else {
-          const newItem1 = `- ${item}`;
-          finishedArray[newItem1] = tree[item];
+          const newItem1 = `+ ${item}`;
+          finishedArray[newItem1] = tree1[item];
         }
       }
+    } else {
+      if (_.isPlainObject(tree[item])) {
+        const newItem = `- ${item}`;
+        finishedArray[newItem] = tree[item];
+      } else {
+        const newItem1 = `- ${item}`;
+        finishedArray[newItem1] = tree[item];
+      }
+    }
   });
   return finishedArray;
 };
