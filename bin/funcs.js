@@ -14,11 +14,11 @@ export const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
   const keys = Object.keys(tree);
   const finishedArray = {};
-  const commonArr = _.uniq(keys.concat(keys1).sort())
-    .map((item) => {
-      if(keys1.includes(item)) {
-        if(_.isPlainObject(tree1[item])) {
-          if(tree[item]) {
+  const commonArr = _.uniq(keys.concat(keys1).sort());
+  commonArr.map((item) => {
+      if (keys1.includes(item)) {
+        if (_.isPlainObject(tree1[item])) {
+          if (tree[item]) {
             const newItem = `  ${item}`;
             finishedArray[newItem] = newResd(tree[item], tree1[item]);
           } else {
@@ -29,7 +29,7 @@ export const newResd = (tree, tree1) => {
           if (tree[item] === tree1[item]) {
             const newItem = `  ${item}`;
             finishedArray[newItem] = tree[item];
-          } else if(tree[item]) {
+          } else if (tree[item]) {
             const newItem = `- ${item}`;
             const newItem1 = `+ ${item}`;
             finishedArray[newItem] = tree[item];
@@ -40,7 +40,7 @@ export const newResd = (tree, tree1) => {
           }
         }
       } else {
-        if(_.isPlainObject(tree[item])) {
+        if (_.isPlainObject(tree[item])) {
           const newItem = `- ${item}`;
           finishedArray[newItem] = tree[item];
         } else {
