@@ -3,7 +3,6 @@
 import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
 
-
 const program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
