@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634793805731" clover="3.2.0">
-  <project timestamp="1634793805732" name="All files">
+<coverage generated="1635431259807" clover="3.2.0">
+  <project timestamp="1635431259808" name="All files">
     <metrics statements="41" coveredstatements="29" conditionals="20" coveredconditionals="11" methods="4" coveredmethods="4" elements="65" coveredelements="44" complexity="0" loc="41" ncloc="41" packages="1" files="2" classes="2"/>
     <file name="funcs.js" path="/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/bin/funcs.js">
       <metrics statements="34" coveredstatements="22" conditionals="14" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <line num="6" count="1" type="stmt"/>
-      <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="4" type="stmt"/>
+      <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="5" type="stmt"/>
       <line num="9" count="3" type="stmt"/>
       <line num="10" count="3" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
