@@ -3,9 +3,9 @@ export const stylish = (value, replacer = ' ', spacesCount = 1) => {
     if (typeof currentValue !== 'object') {
       return currentValue.toString();
     } else if (currentValue === null) {
-        return 'null';
+      return 'null';
     }
-  
+
     const indentSize = depth * spacesCount;
     const currentIndent = replacer.repeat(indentSize);
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
