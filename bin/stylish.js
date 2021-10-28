@@ -1,4 +1,4 @@
-export const stylish = (value, replacer = ' ', spacesCount = 1) => {
+const stylish = (value, replacer = ' ', spacesCount = 1) => {
   const iter = (currentValue, depth) => {
     if (typeof currentValue !== 'object') {
       return currentValue.toString();
@@ -22,3 +22,5 @@ export const stylish = (value, replacer = ' ', spacesCount = 1) => {
 
   return iter(value, 1);
 };
+
+export default stylish;
