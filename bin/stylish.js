@@ -2,7 +2,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
   const iter = (currentValue, depth) => {
     if (typeof currentValue !== 'object') {
       return currentValue.toString();
-    } 
+    }
     if (currentValue === null) {
       return 'null';
     }
