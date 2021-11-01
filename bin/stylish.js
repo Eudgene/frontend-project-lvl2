@@ -7,7 +7,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
       return 'null';
     }
 
-    const indentSize = depth * spacesCount;
+    const indentSize = depth + spacesCount;
     const currentIndent = replacer.repeat(indentSize);
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
     const lines = Object
