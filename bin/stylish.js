@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const stylish = (data, elem = ' ', acc = 1) => {
   const newKeys = [];
   const str = `${data}`;
