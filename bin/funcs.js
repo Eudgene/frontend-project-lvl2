@@ -28,7 +28,7 @@ export const newResd = (tree, tree1) => {
       } else if (tree[item] === tree1[item]) {
         const newItem = `  ${item}`;
         finishedArray[newItem] = tree[item];
-      } else if (tree[item]) {
+      } else if (keys.includes(item)) {
         const newItem = `- ${item}`;
         const newItem1 = `+ ${item}`;
         finishedArray[newItem] = tree[item];
