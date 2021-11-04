@@ -13,7 +13,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
     const lines = Object
       .entries(currentValue)
-      .map(([key, val]) => `${currentIndent}${key}: ${iter(val, depth + 2)}`);
+      .map(([key, val]) => `${currentIndent}${key}: ${iter(val, depth + 1)}`);
     return [
       '{',
       ...lines,
