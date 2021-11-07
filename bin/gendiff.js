@@ -14,7 +14,7 @@ program
     const json1 = takeObjectFromJson(filepath1);
     const json2 = takeObjectFromJson(filepath2);
     const newArr = newResd(json1, json2);
-    console.log(stylish(newArr));
+    console.log(stylish(newArr, ' ', 2));
   });
 
 program.parse();
