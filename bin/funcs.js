@@ -20,28 +20,20 @@ export const newResd = (tree, tree1) => {
       if (keys1.includes(item)) {
         if (_.isPlainObject(tree1[item])) {
           if (tree[item]) {
-            //const newItem = '  ';
             finishedArray[item] = [arrayOfKeys[0], newResd(tree[item], tree1[item])];
           } else {
-            //const newItem1 = '+ ';
             finishedArray[item] = [arrayOfKeys[1], tree1[item]];
           }
         } else if (tree[item] === tree1[item]) {
-          //const newItem = '  ';
           finishedArray[item] = [arrayOfKeys[0], tree[item]];
         } else if (keys.includes(item)) {
-          //const newItem = '- ';
-          //const newItem1 = '+ ';
           finishedArray[item] = [arrayOfKeys[2], arrayOfKeys[1], tree[item], tree1[item]];
         } else {
-          //const newItem1 = '+ ';
           finishedArray[item] = [arrayOfKeys[1], tree1[item]];
         }
       } else if (_.isPlainObject(tree[item])) {
-        //const newItem = '- ';
         finishedArray[item] = [arrayOfKeys[2], tree[item]];
       } else {
-        //const newItem1 = '- ';
         finishedArray[item] = [arrayOfKeys[2], tree[item]];
       }
       return finishedArray;
