@@ -11,10 +11,21 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-test('File type', () => {
+describe.skip('Сhecking the work of readFile', () => {
+  test('When we get some way', () => {
+      //Arrange
+      //Act
+      const res = readFile('file1.json');
+
+      //Assert
+      expect(typeof res).toEqual('string');
+  });
+});
+
+/*test('File type', () => {
   const res = readFile('file1.json');
   expect(typeof res).toEqual('string');
-});
+});*/
 
 test('TakeObjectFromJson result type', () => {
   const res = JSON.parse(readFile('file1.json'));
