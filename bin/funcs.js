@@ -25,28 +25,25 @@ export const newResd = (tree, tree1) => {
             const newItem1 = '+ ';
             finishedArray[item] = [newItem1, tree1[item]];
           }
-        } else {
-          if (tree[item] === tree1[item]) {
-            const newItem = '  ';
-            finishedArray[item] = [ newItem, tree[item]];
-          } else if (keys.includes(item)) {
-            const newItem = '- ';
-            const newItem1 = '+ ';
-            finishedArray[item] = [newItem, newItem1, tree[item], tree1[item]];
-          } else {
-            const newItem1 = '+ ';
-            finishedArray[item] = [newItem1, tree1[item]];
-          }
-        }
-      } else {
-        if (_.isPlainObject(tree[item])) {
-          const newItem = '- ';
+        } else if (tree[item] === tree1[item]) {
+          const newItem = '  ';
           finishedArray[item] = [newItem, tree[item]];
+        } else if (keys.includes(item)) {
+          const newItem = '- ';
+          const newItem1 = '+ ';
+          finishedArray[item] = [newItem, newItem1, tree[item], tree1[item]];
         } else {
-          const newItem1 = '- ';
-          finishedArray[item] = [newItem1, tree[item]];
+          const newItem1 = '+ ';
+          finishedArray[item] = [newItem1, tree1[item]];
         }
+      } else if (_.isPlainObject(tree[item])) {
+        const newItem = '- ';
+        finishedArray[item] = [newItem, tree[item]];
+      } else {
+        const newItem1 = '- ';
+        finishedArray[item] = [newItem1, tree[item]];
       }
-  });
+      return finishedArray;
+    });
   return finishedArray;
 };
