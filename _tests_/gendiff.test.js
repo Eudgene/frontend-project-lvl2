@@ -22,11 +22,6 @@ describe('Сhecking the work of readFile', () => {
   });
 });
 
-/*test('File type', () => {
-  const res = readFile('file1.json');
-  expect(typeof res).toEqual('string');
-});*/
-
 test('TakeObjectFromJson result type', () => {
   const res = JSON.parse(readFile('file1.json'));
   const res2 = JSON.parse(readFile('file2.json'));
