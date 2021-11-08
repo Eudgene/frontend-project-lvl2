@@ -13,12 +13,8 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 describe('Сhecking the work of readFile', () => {
   test('When we get some way', () => {
-      //Arrange
-      //Act
-      const res = readFile('file1.json');
-
-      //Assert
-      expect(typeof res).toEqual('string');
+    const res = readFile('file1.json');
+    expect(typeof res).toEqual('string');
   });
 });
 
