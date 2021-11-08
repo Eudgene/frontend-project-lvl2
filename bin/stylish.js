@@ -10,18 +10,18 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
     const currentIn = replacer.repeat(indentSize);
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
     const currentIndent = currentIn === undefined ? '' : currentIn;
-    let bbb = {};
+    let result = {};
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
         if (val.length === 2) {
-          bbb = `${currentIndent}${val[0]}${key}: ${iter(val[1], depth + 2)}`;
+          result = `${currentIndent}${val[0]}${key}: ${iter(val[1], depth + 2)}`;
         } else if (val.length === 4) {
-          bbb = `${currentIndent}${val[0]}${key}: ${iter(val[2], depth + 2)}\n${currentIndent}${val[1]}${key}: ${val[3]}`;
+          result = `${currentIndent}${val[0]}${key}: ${iter(val[2], depth + 2)}\n${currentIndent}${val[1]}${key}: ${val[3]}`;
         } else {
-          bbb = `${currentIndent}  ${key}: ${iter(val, depth + 2)}`;
+          result = `${currentIndent}  ${key}: ${iter(val, depth + 2)}`;
         }
-        return bbb;
+        return result;
       });
     return [
       '{',
