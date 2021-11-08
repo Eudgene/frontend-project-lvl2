@@ -1,7 +1,7 @@
 const stylish = (value, replacer = ' ', spacesCount = 1) => {
   const iter = (currentValue, depth) => {
     if (typeof currentValue !== 'object') {
-      return currentValue.toString();
+      currentValue.toString();
     } else if (currentValue === null) {
       return 'null';
     }
@@ -14,7 +14,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
-        if (val.length === 2 ) {
+        if (val.length === 2) {
           bbb = `${currentIndent}${val[0]}${key}: ${iter(val[1], depth + 2)}`;
         } else if (val.length === 4) {
           bbb = `${currentIndent}${val[0]}${key}: ${iter(val[2], depth + 2)}\n${currentIndent}${val[1]}${key}: ${val[3]}`;
