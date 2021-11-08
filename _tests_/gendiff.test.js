@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-describe.skip('Сhecking the work of readFile', () => {
+describe('Сhecking the work of readFile', () => {
   test('When we get some way', () => {
       //Arrange
       //Act
