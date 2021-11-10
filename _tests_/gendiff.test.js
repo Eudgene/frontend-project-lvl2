@@ -54,10 +54,16 @@ describe('Сhecking the newResd', () => {
   });
 });
 
-test('Parsers', () => {
+describe('Сhecking the Parsers', () => {
   const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
   const res2 = parsFunc(readFile('fixtures/file1.yml'), getFixturePath('fixtures/file1.yml'));
-  expect(typeof res).toEqual('object');
-  expect(typeof res2).toEqual('object');
-  expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
+
+  test('Cheking type of result', () => {
+    expect(typeof res).toEqual('object');
+    expect(typeof res2).toEqual('object');
+  });
+
+  test('Сhecking for exceptions', () => {
+    expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
+  });
 });
