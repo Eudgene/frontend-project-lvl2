@@ -19,18 +19,30 @@ describe('Сhecking the work of readFile', () => {
 });
 
 describe('Сhecking the type result of TakeObjectFromJson', () => {
-  test('TakeObjectFromJson result type', () => {
-    const res = JSON.parse(readFile('file1.json'));
-    const res2 = JSON.parse(readFile('file2.json'));
-    const obj = takeObjectFromJson('file1.json');
-    const obj2 = takeObjectFromJson('file2.json');
-    const obj3 = takeObjectFromJson(getFixturePath('file1.json'));
+  const res = JSON.parse(readFile('file1.json'));
+  const res2 = JSON.parse(readFile('file2.json'));
+  const obj = takeObjectFromJson('file1.json');
+  const obj2 = takeObjectFromJson('file2.json');
+  const obj3 = takeObjectFromJson(getFixturePath('file1.json'));
+
+  test('Cheking type of result', () => {
     expect(typeof obj).toEqual('object');
     expect(typeof obj2).toEqual('object');
     expect(typeof obj3).toEqual('object');
     expect(obj).toEqual(res);
     expect(obj3).toEqual(res);
     expect(obj2).toEqual(res2);
+    expect(() => takeObjectFromJson('file1.js')).toThrow();
+  });
+
+  test('Сhecking the result for compliance with the expected', () => {
+    expect(obj).toEqual(res);
+    expect(obj3).toEqual(res);
+    expect(obj2).toEqual(res2);
+    expect(() => takeObjectFromJson('file1.js')).toThrow();
+  });
+
+  test('Сhecking for exceptions', () => {
     expect(() => takeObjectFromJson('file1.js')).toThrow();
   });
 });
