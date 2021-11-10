@@ -10,6 +10,60 @@ const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+const exemple = {
+  "common": {
+    "setting1": "Value 1",
+    "setting2": 200,
+    "setting3": true,
+    "setting6": {
+      "key": "value",
+      "doge": {
+        "wow": ""
+      }
+    }
+  }
+};
+
+const exemple1 = {
+  "common": {
+     "follow": false,
+     "setting1": "Value 1",
+     "setting3": null,
+     "setting4": "blah blah",
+     "setting5": {
+       "key5": "value5"
+     },
+     "setting6": {
+       "key": "value",
+       "ops": "vops",
+       "doge": {
+         "wow": "so much"
+      }
+    }
+  }
+};
+
+const resulted = {
+  common: [
+    '  ',
+    {
+      follow: [ '+ ', false ],
+      setting1: [ '  ', 'Value 1' ],
+      setting2: [ '- ', 200 ],
+      setting3: [ '- ', '+ ', true, null ],
+      setting4: [ '+ ', 'blah blah' ],
+      setting5: [ '+ ', { key5: 'value5' } ],
+      setting6: [
+        '  ',
+        {
+          doge: [ '  ', { wow: [ '- ', '+ ', '', 'so much' ] } ],
+          key: [ '  ', 'value' ],
+          ops: [ '+ ', 'vops' ]
+        }
+      ]
+    }
+  ]
+};
 
 describe('Сhecking the work of readFile', () => {
   test('When we get some way', () => {
@@ -51,6 +105,10 @@ describe('Сhecking the newResd', () => {
 
   test('Сhecking for exceptions', () => {
     expect(() => takeObjectFromJson('file1.js', 'file2.js')).toThrow();
+  });
+
+  test('Сhecking the result for compliance with the expected', () => {
+    expect((resulted) => takeObjectFromJson(exemple, exemple1));
   });
 });
 
