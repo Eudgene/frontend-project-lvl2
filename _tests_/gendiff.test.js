@@ -65,14 +65,14 @@ const resulted = {
   ]
 };
 
-describe('Сhecking the work of readFile', () => {
+describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
     const res = readFile('file1.json');
     expect(typeof res).toEqual('string');
   });
 });
 
-describe('Сhecking the type result of TakeObjectFromJson', () => {
+describe('2-Сhecking the type result of TakeObjectFromJson', () => {
   const res = JSON.parse(readFile('file1.json'));
   const res2 = JSON.parse(readFile('file2.json'));
   const obj = takeObjectFromJson('file1.json');
@@ -96,7 +96,7 @@ describe('Сhecking the type result of TakeObjectFromJson', () => {
   });
 });
 
-describe('Сhecking the newResd', () => {
+describe('3-Сhecking the newResd', () => {
   const res = newResd('file1.json', 'file2.json');
 
   test('Cheking type of result', () => {
@@ -112,7 +112,7 @@ describe('Сhecking the newResd', () => {
   });
 });
 
-describe('Сhecking the Parsers', () => {
+describe('4-Сhecking the Parsers', () => {
   const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
   const res2 = parsFunc(readFile('fixtures/file1.yml'), getFixturePath('fixtures/file1.yml'));
 
