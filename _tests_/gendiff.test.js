@@ -56,7 +56,7 @@ describe('Сhecking the newResd', () => {
 
 describe('Сhecking the Parsers', () => {
   const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
-  const res2 = parsFunc(readFile('file1.yml'), getFixturePath('file1.yml'));
+  const res2 = parsFunc(readFile('fixtures/file1.yml'), getFixturePath('fixtures/file1.yml'));
 
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
