@@ -9,7 +9,6 @@ const parsFunc = (file, pathFile) => {
   } else if (format === '.yml' || format === '.yaml') {
     result = yaml.load(file);
   }
-  console.log(result);
   return result;
 };
 
