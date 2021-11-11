@@ -84,13 +84,11 @@ describe('2-Сhecking the type result of TakeObjectFromJson', () => {
     expect(typeof obj2).toEqual('object');
     expect(typeof obj3).toEqual('object');
   });
-
   test('Сhecking the result for compliance with the expected', () => {
     expect(obj).toEqual(res);
     expect(obj3).toEqual(res);
     expect(obj2).toEqual(res2);
   });
-
   test('Сhecking for exceptions', () => {
     expect(() => takeObjectFromJson('file1.js')).toThrow();
   });
@@ -102,11 +100,9 @@ describe('3-Сhecking the newResd', () => {
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
   });
-
   test('Сhecking for exceptions', () => {
     expect(() => takeObjectFromJson('file1.js', 'file2.js')).toThrow();
   });
-
   test('Сhecking the result for compliance with the expected', () => {
     expect((resulted) => takeObjectFromJson(exemple, exemple1));
   });
