@@ -21,48 +21,31 @@ const exemple = {
         "wow": ""
       }
     }
-  }
-};
-
-const exemple1 = {
-  "common": {
-     "follow": false,
-     "setting1": "Value 1",
-     "setting3": null,
-     "setting4": "blah blah",
-     "setting5": {
-       "key5": "value5"
-     },
-     "setting6": {
-       "key": "value",
-       "ops": "vops",
-       "doge": {
-         "wow": "so much"
-      }
+  },
+  "group1": {
+    "baz": "bas",
+    "foo": "bar",
+    "nest": {
+      "key": "value"
+    }
+  },
+  "group2": {
+    "abc": 12345,
+    "deep": {
+      "id": 45
     }
   }
 };
 
 const resulted = {
-  common: [
-    '  ',
-    {
-      follow: [ '+ ', false ],
-      setting1: [ '  ', 'Value 1' ],
-      setting2: [ '- ', 200 ],
-      setting3: [ '- ', '+ ', true, null ],
-      setting4: [ '+ ', 'blah blah' ],
-      setting5: [ '+ ', { key5: 'value5' } ],
-      setting6: [
-        '  ',
-        {
-          doge: [ '  ', { wow: [ '- ', '+ ', '', 'so much' ] } ],
-          key: [ '  ', 'value' ],
-          ops: [ '+ ', 'vops' ]
-        }
-      ]
-    }
-  ]
+  common: {
+    setting1: 'Value 1',
+    setting2: 200,
+    setting3: true,
+    setting6: { key: 'value', doge: [Object] }
+  },
+  group1: { baz: 'bas', foo: 'bar', nest: { key: 'value' } },
+  group2: { abc: 12345, deep: { id: 45 } }
 };
 
 describe('1-Сhecking the work of readFile', () => {
@@ -115,6 +98,7 @@ describe('4-Сhecking the Parsers', () => {
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
     expect(typeof res2).toEqual('object');
+    expect(res2).toEqual(resulted);
   });
   test('Сhecking for exceptions', () => {
     expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
