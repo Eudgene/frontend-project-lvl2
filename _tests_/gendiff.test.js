@@ -111,7 +111,7 @@ describe('3-Сhecking the newResd', () => {
     expect((resulted) => takeObjectFromJson(exemple, exemple1));
   });
   test('&&&', () => {
-    expect(res).toEqual('resulted');
+    expect(res).toEqual(resulted);
   });
 });
 
