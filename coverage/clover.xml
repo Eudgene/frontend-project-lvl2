@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636606734144" clover="3.2.0">
-  <project timestamp="1636606734145" name="All files">
-    <metrics statements="33" coveredstatements="26" conditionals="20" coveredconditionals="11" methods="4" coveredmethods="4" elements="57" coveredelements="41" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
+<coverage generated="1636606994503" clover="3.2.0">
+  <project timestamp="1636606994503" name="All files">
+    <metrics statements="33" coveredstatements="26" conditionals="20" coveredconditionals="12" methods="4" coveredmethods="4" elements="57" coveredelements="42" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
     <file name="funcs.js" path="/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/bin/funcs.js">
       <metrics statements="26" coveredstatements="19" conditionals="14" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <line num="6" count="1" type="stmt"/>
@@ -32,14 +32,14 @@
       <line num="41" count="1" type="stmt"/>
     </file>
     <file name="parsers.js" path="/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/bin/parsers.js">
-      <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <line num="4" count="1" type="stmt"/>
-      <line num="5" count="5" type="stmt"/>
-      <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="8" count="4" type="stmt"/>
-      <line num="9" count="1" type="cond" truecount="2" falsecount="2"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="12" count="5" type="stmt"/>
+      <line num="9" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="12" count="6" type="stmt"/>
     </file>
   </project>
 </coverage>

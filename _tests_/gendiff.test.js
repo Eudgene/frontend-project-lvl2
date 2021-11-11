@@ -111,14 +111,11 @@ describe('3-Сhecking the newResd', () => {
 describe('4-Сhecking the Parsers', () => {
   const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
   const res2 = parsFunc(readFile('fixtures/file1.yml'), getFixturePath('fixtures/file1.yml'));
-  const res3 = parsFunc(readFile('fixtures/file1.yaml'), getFixturePath('fixtures/file1.yaml'));
 
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
     expect(typeof res2).toEqual('object');
-    expect(typeof res3).toEqual('object');
   });
-
   test('Сhecking for exceptions', () => {
     expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
   });
