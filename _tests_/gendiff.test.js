@@ -38,14 +38,35 @@ const exemple = {
 };
 
 const resulted = {
-  common: {
-    setting1: 'Value 1',
-    setting2: 200,
-    setting3: true,
-    setting6: { key: 'value', doge: { wow: '' } }
-  },
-  group1: { baz: 'bas', foo: 'bar', nest: { key: 'value' } },
-  group2: { abc: 12345, deep: { id: 45 } }
+  common: [
+    '  ',
+    {
+      follow: [ '+ ', false ],
+      setting1: [ '  ', 'Value 1' ],
+      setting2: [ '- ', 200 ],
+      setting3: [ '- ', '+ ', true, null ],
+      setting4: [ '+ ', 'blah blah' ],
+      setting5: [ '+ ', { key5: 'value5' } ],
+      setting6: [
+        '  ',
+        {
+          doge: [ '  ', [Object] ],
+          key: [ '  ', 'value' ],
+          ops: [ '+ ', 'vops' ]
+        }
+      ]
+    }
+  ],
+  group1: [
+    '  ',
+    {
+      baz: [ '- ', '+ ', 'bas', 'bars' ],
+      foo: [ '  ', 'bar' ],
+      nest: [ '- ', '+ ', { key: 'value' }, 'str' ]
+    }
+  ],
+  group2: [ '- ', '+ ', { key: 'value' }, 'str' ],
+  group3: [ '+ ', { deep: { id: { number: 45 } }, fee: 100500 } ]
 };
 
 describe('1-Сhecking the work of readFile', () => {
@@ -88,6 +109,9 @@ describe('3-Сhecking the newResd', () => {
   });
   test('Сhecking the result for compliance with the expected', () => {
     expect((resulted) => takeObjectFromJson(exemple, exemple1));
+  });
+  test('&&&', () => {
+    expect(res).toEqual(resulted);
   });
 });
 
