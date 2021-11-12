@@ -110,6 +110,7 @@ describe('3-Сhecking the newResd', () => {
   });
   test('&&&', () => {
     console.log(res);
+    console.log(res2);
     expect(resulted).toEqual(newResd(res, res2));
   });
 });
