@@ -108,7 +108,7 @@ describe('3-Сhecking the newResd', () => {
   test('Сhecking for exceptions', () => {
     expect(() => takeObjectFromJson('file1.js', 'file2.js')).toThrow();
   });
-  test('&&&', () => {
+  test('Сhecking the result for compliance with the expected', () => {
     expect(resulted).toEqual(newResd(res, res2));
   });
 });
