@@ -109,8 +109,6 @@ describe('3-Сhecking the newResd', () => {
     expect(() => takeObjectFromJson('file1.js', 'file2.js')).toThrow();
   });
   test('&&&', () => {
-    console.log(newResd(res, res2));
-
     expect(resulted).toEqual(newResd(res, res2));
   });
 });
