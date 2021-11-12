@@ -99,8 +99,8 @@ describe('2-Сhecking the type result of TakeObjectFromJson', () => {
 });
 
 describe('3-Сhecking the newResd', () => {
-  const res = readFile('fixtures/file1.json');
-  const res2 = readFile('fixtures/file2.json');
+  const res = parsFunc(readFile('fixtures/file1.json'), getFixturePath('fixtures/file1.json'));
+  const res2 = parsFunc(readFile('fixtures/file2.json'), getFixturePath('fixtures/file2.json'));
 
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
