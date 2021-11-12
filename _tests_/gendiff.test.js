@@ -50,7 +50,7 @@ const resulted = {
       setting6: [
         '  ',
         {
-          doge: [ '  ', [Object] ],
+          doge: [ '  ', { wow: [ '- ', '+ ', '', 'so much' ] } ],
           key: [ '  ', 'value' ],
           ops: [ '+ ', 'vops' ]
         }
@@ -65,7 +65,7 @@ const resulted = {
       nest: [ '- ', '+ ', { key: 'value' }, 'str' ]
     }
   ],
-  group2: [ '- ', '+ ', { key: 'value' }, 'str' ],
+  group2: [ '- ', { abc: 12345, deep: { id: 45 } } ],
   group3: [ '+ ', { deep: { id: { number: 45 } }, fee: 100500 } ]
 };
 
