@@ -99,7 +99,8 @@ describe('2-Сhecking the type result of TakeObjectFromJson', () => {
 });
 
 describe('3-Сhecking the newResd', () => {
-  const res = newResd('file1.json', 'file2.json');
+  const res = JSON.parse(readFile('file1.json'));
+  const res2 = JSON.parse(readFile('file2.json'));
 
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
@@ -108,8 +109,8 @@ describe('3-Сhecking the newResd', () => {
     expect(() => takeObjectFromJson('file1.js', 'file2.js')).toThrow();
   });
   test('&&&', () => {
-    console.log(readFile('file1.json'));
-    expect(res).toEqual(resulted);
+
+    expect(resulted).toEqual(newResd(res, res2));
   });
 });
 
