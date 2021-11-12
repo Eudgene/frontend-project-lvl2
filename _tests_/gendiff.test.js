@@ -120,7 +120,6 @@ describe('4-Сhecking the Parsers', () => {
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
     expect(typeof res2).toEqual('object');
-    //expect(res2).toEqual(resulted);
   });
   test('Сhecking for exceptions', () => {
     expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
