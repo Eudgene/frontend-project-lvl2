@@ -88,7 +88,7 @@ describe('3-Сhecking the newResd', () => {
 });
 
 describe('4-Сhecking the Parsers', () => {
-  const res = parsFunc(readFile('file1.json'), getFixturePath('file1.json'));
+  const res = parsFunc(readFile('fixtures/file1.json'), getFixturePath('fixtures/file1.json'));
   const res2 = parsFunc(readFile('fixtures/file1.yml'), getFixturePath('fixtures/file1.yml'));
 
   test('Cheking type of result', () => {
