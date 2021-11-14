@@ -12,7 +12,7 @@ const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const resulted = {
-  "common": [
+  'common': [
     '  ',
     {
       "follow": ['+ ', false],
