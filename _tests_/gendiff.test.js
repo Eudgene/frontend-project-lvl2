@@ -106,7 +106,7 @@ describe('4-Сhecking the Parsers', () => {
     expect(typeof res).toEqual('object');
     expect(typeof res2).toEqual('object');
   });
-  test('Cheking type of result', () => {
+  test('Сhecking the result for compliance with the expected', () => {
     expect(resultedForTestsOfParser).toEqual(res2);
   });
   test('Сhecking for exceptions', () => {
