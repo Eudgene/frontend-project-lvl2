@@ -36,11 +36,11 @@ const resulted = {
     {
       baz: ['- ', '+ ', 'bas', 'bars'],
       foo: ['  ', 'bar'],
-      nest: ['- ', '+ ', { key: 'value' }, 'str']
-    }
+      nest: ['- ', '+ ', { key: 'value' }, 'str'],
+    },
   ],
   group2: ['- ', { abc: 12345, deep: { id: 45 } }],
-  group3: ['+ ', { deep: { id: { number: 45 } }, fee: 100500 }]
+  group3: ['+ ', { deep: { id: { number: 45 } }, fee: 100500 }],
 };
 
 describe('1-Сhecking the work of readFile', () => {
