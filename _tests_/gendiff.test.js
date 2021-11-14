@@ -43,6 +43,17 @@ const resulted = {
   group3: ['+ ', { deep: { id: { number: 45 } }, fee: 100500 }],
 };
 
+const resultedForTestsOfParser = {
+  common: {
+    setting1: 'Value 1',
+    setting2: 200,
+    setting3: true,
+    setting6: { key: 'value', doge: [Object] }
+  },
+  group1: { baz: 'bas', foo: 'bar', nest: { key: 'value' } },
+  group2: { abc: 12345, deep: { id: 45 } }
+}
+
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
     const res = readFile('file1.json');
@@ -90,11 +101,13 @@ describe('3-Сhecking the newResd', () => {
 describe('4-Сhecking the Parsers', () => {
   const res = parsFunc(readFile('fixtures/file1.json'), getFixturePath('fixtures/file1.json'));
   const res2 = parsFunc(readFile('fixtures/file1.yml'), getFixturePath('fixtures/file1.yml'));
-  console.log(res2);
-  
+
   test('Cheking type of result', () => {
     expect(typeof res).toEqual('object');
     expect(typeof res2).toEqual('object');
+  });
+  test('Cheking type of result', () => {
+    expect(res2).toEqual(resultedForTestsOfParser);
   });
   test('Сhecking for exceptions', () => {
     expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
