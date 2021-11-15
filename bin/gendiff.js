@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
-import stylish from './stylish.js';
+import stylish from '../formatters/stylish.js';
 
 const program = new Command();
 program
