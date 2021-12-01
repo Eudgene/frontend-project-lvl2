@@ -19,34 +19,32 @@ export const newResd = (tree, tree1) => {
       if (keys1.includes(item)) {
         if (_.isPlainObject(tree1[item])) {
           if (tree[item]) {
-            const newItem = `notChanged`;
+            const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(tree[item], tree1[item])];
           } else {
-            const newItem1 = `added`;
+            const newItem1 = 'added';
             finishedArray[item] = [newItem1, tree1[item]];
           }
         } else {
           if (tree[item] === tree1[item]) {
-            const newItem = `notChanged`;
+            const newItem = 'notChanged';
             finishedArray[item] = [newItem, tree[item]];
           } else if (keys.includes(item)) {
-            const newItem = `updated`;
+            const newItem = 'updated';
             finishedArray[item] = [newItem, tree[item], tree1[item]];
           } else {
-            const newItem1 = `added`;
+            const newItem1 = 'added';
             finishedArray[item] = [newItem1, tree1[item]];
           }
         }
+      } else if (_.isPlainObject(tree[item])) {
+        const newItem = 'removed';
+        finishedArray[item] = [newItem, tree[item]];
       } else {
-        if(_.isPlainObject(tree[item])) {
-          const newItem = `removed`;
-          finishedArray[item] = [newItem, tree[item]];
-        } else {
-          const newItem1 = `removed`;
-          finishedArray[item] = [newItem1, tree[item]];
-        }
+        const newItem1 = 'removed';
+        finishedArray[item] = [newItem1, tree[item]];
       }
-    return finishedArray;  
+    return finishedArray; 
   });
   return finishedArray;
 };
