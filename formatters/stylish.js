@@ -16,16 +16,16 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
       .map(([key, val]) => {
         const findPrefix = (item) => {
           let prefix = '  ';
-          if (item === `added`) {
+          if (item === 'added') {
             prefix = '+ ';
-          } else if (item === `removed`) {
+          } else if (item === 'removed') {
             prefix = '- ';
-          } else if (item === `updated`) {
+          } else if (item === 'updated') {
             prefix = ['- ', '+ '];
           }
           return prefix;
         };
-        if (val.length === 2 ) {
+        if (val.length === 2) {
           bbb = `${currentIndent}${findPrefix(val[0])}${key}: ${iter(val[1], depth + 2)}`;
         } else if (val.length === 3) {
           bbb = `${currentIndent}${findPrefix(val[0])[0]}${key}: ${iter(val[1], depth + 2)}\n${currentIndent}${findPrefix(val[0])[1]}${key}: ${val[2]}`;
