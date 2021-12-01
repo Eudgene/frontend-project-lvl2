@@ -20,7 +20,7 @@ export const newResd = (tree, tree1) => {
         if(_.isPlainObject(tree1[item])) {
           if(tree[item]) {
             const newItem = `notChanged`;
-            finishedArray[item] = [ newItem, goOnTree1(tree[item], tree1[item]) ];
+            finishedArray[item] = [ newItem, newResd(tree[item], tree1[item]) ];
           } else {
             const newItem1 = `added`;
             finishedArray[item] = [ newItem1, tree1[item] ];
