@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636882777373" clover="3.2.0">
-  <project timestamp="1636882777373" name="All files">
-    <metrics statements="33" coveredstatements="33" conditionals="20" coveredconditionals="18" methods="4" coveredmethods="4" elements="57" coveredelements="55" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
+<coverage generated="1638336507803" clover="3.2.0">
+  <project timestamp="1638336507803" name="All files">
+    <metrics statements="38" coveredstatements="38" conditionals="20" coveredconditionals="18" methods="4" coveredmethods="4" elements="62" coveredelements="60" complexity="0" loc="38" ncloc="38" packages="1" files="2" classes="2"/>
     <file name="funcs.js" path="/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/bin/funcs.js">
-      <metrics statements="26" coveredstatements="26" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3"/>
+      <metrics statements="31" coveredstatements="31" conditionals="14" coveredconditionals="14" methods="3" coveredmethods="3"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="5" type="cond" truecount="2" falsecount="0"/>
       <line num="8" count="5" type="stmt"/>
@@ -14,22 +14,27 @@
       <line num="15" count="5" type="stmt"/>
       <line num="16" count="5" type="stmt"/>
       <line num="17" count="5" type="stmt"/>
-      <line num="18" count="5" type="stmt"/>
-      <line num="20" count="18" type="cond" truecount="2" falsecount="0"/>
-      <line num="21" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="22" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="20" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="4" type="stmt"/>
       <line num="23" count="4" type="stmt"/>
       <line num="25" count="2" type="stmt"/>
-      <line num="27" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="28" count="3" type="stmt"/>
-      <line num="29" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="30" count="4" type="stmt"/>
-      <line num="32" count="3" type="stmt"/>
-      <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="35" count="1" type="stmt"/>
-      <line num="37" count="1" type="stmt"/>
-      <line num="39" count="18" type="stmt"/>
-      <line num="41" count="5" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="29" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="31" count="3" type="stmt"/>
+      <line num="32" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="4" type="stmt"/>
+      <line num="34" count="4" type="stmt"/>
+      <line num="36" count="3" type="stmt"/>
+      <line num="37" count="3" type="stmt"/>
+      <line num="41" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="46" count="1" type="stmt"/>
+      <line num="50" count="5" type="stmt"/>
     </file>
     <file name="parsers.js" path="/mnt/c/Users/user/Desktop/Програмирование/Тестовые по Хекслет/frontend-project-lvl2/bin/parsers.js">
       <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>

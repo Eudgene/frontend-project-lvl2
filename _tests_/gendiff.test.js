@@ -13,34 +13,34 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8'
 
 const resulted = {
   common: [
-    '  ',
+    'notChanged',
     {
-      follow: ['+ ', false],
-      setting1: ['  ', 'Value 1'],
-      setting2: ['- ', 200],
-      setting3: ['- ', '+ ', true, null],
-      setting4: ['+ ', 'blah blah'],
-      setting5: ['+ ', { key5: 'value5' }],
+      follow: ['added', false],
+      setting1: ['notChanged', 'Value 1'],
+      setting2: ['removed', 200],
+      setting3: ['removed', '+ ', true, null],
+      setting4: ['added', 'blah blah'],
+      setting5: ['added', { key5: 'value5' }],
       setting6: [
-        '  ',
+        'notChanged',
         {
-          doge: ['  ', { wow: ['- ', '+ ', '', 'so much'] }],
-          key: ['  ', 'value'],
-          ops: ['+ ', 'vops'],
+          doge: ['notChanged', { wow: ['updated', '', 'so much'] }],
+          key: ['notChanged', 'value'],
+          ops: ['added', 'vops'],
         },
       ],
     },
   ],
   group1: [
-    '  ',
+    'notChanged',
     {
-      baz: ['- ', '+ ', 'bas', 'bars'],
-      foo: ['  ', 'bar'],
-      nest: ['- ', '+ ', { key: 'value' }, 'str'],
+      baz: ['updated', 'bas', 'bars'],
+      foo: ['notChanged', 'bar'],
+      nest: ['updated', { key: 'value' }, 'str'],
     },
   ],
-  group2: ['- ', { abc: 12345, deep: { id: 45 } }],
-  group3: ['+ ', { deep: { id: { number: 45 } }, fee: 100500 }],
+  group2: ['removed', { abc: 12345, deep: { id: 45 } }],
+  group3: ['added', { deep: { id: { number: 45 } }, fee: 100500 }],
 };
 
 const resultedForTestsOfParser = {
