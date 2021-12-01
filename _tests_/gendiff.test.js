@@ -18,7 +18,7 @@ const resulted = {
       follow: ['added', false],
       setting1: ['notChanged', 'Value 1'],
       setting2: ['removed', 200],
-      setting3: ['removed', '+ ', true, null],
+      setting3: ['updated', true, null],
       setting4: ['added', 'blah blah'],
       setting5: ['added', { key5: 'value5' }],
       setting6: [
