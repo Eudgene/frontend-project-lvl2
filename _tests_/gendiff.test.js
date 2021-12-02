@@ -55,7 +55,7 @@ const resultedForTestsOfParser = {
   group2: { abc: 12345, deep: { id: 45 } },
 };
 
-const resultOfPlain = 'Property 'common.follow' was added with value: false';
+const resultOfPlain = `Property 'common.follow' was added with value: false`;
 
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
