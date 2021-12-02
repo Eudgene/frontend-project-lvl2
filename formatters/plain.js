@@ -13,7 +13,7 @@ const valueInString = (value) => {
 };
 
 const plain = (value) => {
-  const newString;
+  let newString;
   const bbb = [];
   const iter = (currentValue, stringWay = '', depth = 0) => {
     const lines = Object
