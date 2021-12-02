@@ -4,7 +4,7 @@ import { dirname } from 'path';
 import * as fs from 'fs';
 import { takeObjectFromJson, newResd } from '../bin/funcs.js';
 import parsFunc from '../bin/parsers.js';
-import plain from '../bin/plain.js';
+import plain from '../formatters/plain.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
