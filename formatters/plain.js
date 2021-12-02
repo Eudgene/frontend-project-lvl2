@@ -1,6 +1,20 @@
+const valueInString = (value) => {
+  let result;
+  if (value === null) {
+    result = null;
+  } else if (typeof value === 'object') {
+    result = '[complex value]';
+  } else if (typeof value === 'string') {
+    result = `'${value}'`;
+  } else {
+    result = value;
+  }
+  return result;
+};
+
 const plain = (value) => {
   let newString;
-  let bbb = [];
+  const bbb = [];
   const iter = (currentValue, stringWay = '', depth = 0) => {
     const lines = Object
       .entries(currentValue)
@@ -19,7 +33,6 @@ const plain = (value) => {
           bbb.push(`Property '${stringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
         } else if (val[0] === 'notChanged') {
           if (typeof val[1] === 'object') {
-            previus = stringWay;
             let newString = stringWay === '' ? key : stringWay += `.${key}`;
             iter(val[1], newString, depth + 1);
           } else {
