@@ -4,6 +4,7 @@ import { dirname } from 'path';
 import * as fs from 'fs';
 import { takeObjectFromJson, newResd } from '../bin/funcs.js';
 import parsFunc from '../bin/parsers.js';
+import plain from '../bin/plain.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -53,6 +54,8 @@ const resultedForTestsOfParser = {
   group1: { baz: 'bas', foo: 'bar', nest: { key: 'value' } },
   group2: { abc: 12345, deep: { id: 45 } },
 };
+
+const resultOfPlain = 'Property 'common.follow' was added with value: false';
 
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
@@ -111,5 +114,12 @@ describe('4-Сhecking the Parsers', () => {
   });
   test('Сhecking for exceptions', () => {
     expect(() => parsFunc(readFile('file1.ml'), getFixturePath('file1.ml'))).toThrow();
+  });
+});
+
+describe('5-Сhecking the Plain', () => {
+  
+  test('Сhecking the result for compliance with the expected', () => {
+    expect(plain(resulted)).toEqual(resultOfPlain);
   });
 });
