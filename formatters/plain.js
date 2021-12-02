@@ -16,6 +16,7 @@ const plain = (value) => {
   let newString;
   const bbb = [];
   const iter = (currentValue, stringWay = '', depth = 0) => {
+    let stringWay;
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
