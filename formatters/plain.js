@@ -22,7 +22,7 @@ const plain = (value) => {
         const arr = stringWay.split('.');
         if (arr.length !== depth) {
           arr.splice(arr.length - 1, 1);
-          const stringWay = arr.join('.');
+          stringWay = arr.join('.');
         }
         const wayInString = stringWay === '' ? key : `.${key}`;
         if (val[0] === 'added') {
