@@ -19,11 +19,13 @@ const plain = (value) => {
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
-        const arr = stringWay.split('.');
         let newStringWay = stringWay;
-        if (arr.length !== depth) {
-          arr.splice(arr.length - 1, 1);
-          newStringWay = arr.join('.');
+        if (stringWay !== '') {
+          const arr = stringWay.split('.');
+          if (arr.length !== depth) {
+            arr.splice(arr.length - 1, 1);
+            newStringWay = arr.join('.');
+          }
         }
         const wayInString = newStringWay === '' ? key : `.${key}`;
         if (val[0] === 'added') {
