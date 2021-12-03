@@ -119,6 +119,8 @@ describe('4-Сhecking the Parsers', () => {
 
 describe('5-Сhecking the Plain', () => {
   test('Сhecking the result for compliance with the expected', () => {
+    console.log(resultOfPlain);
+    console.log(plain(resulted));
     expect(plain(resulted)).toEqual(resultOfPlain);
   });
 });
