@@ -67,7 +67,7 @@ const resultOfPlain = [
   "Property 'group1.nest' was updated. From [complex value] to 'str'",
   "Property 'group2' was removed",
   "Property 'group3' was added with value: [complex value]",
-  ];
+];
 
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
