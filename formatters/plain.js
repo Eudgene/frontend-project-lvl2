@@ -21,7 +21,6 @@ const plain = (value) => {
       .map(([key, val]) => {
         let newStringWay = stringWay;
         if (stringWay !== '') {
-          console.log(newStringWay);
           const arr = newStringWay.split('.');
           if (arr.length !== depth) {
             arr.splice(arr.length - 1, 1);
