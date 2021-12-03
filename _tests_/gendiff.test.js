@@ -55,7 +55,19 @@ const resultedForTestsOfParser = {
   group2: { abc: 12345, deep: { id: 45 } },
 };
 
-const resultOfPlain = 'Property "common.follow" was added with value: false';
+const resultOfPlain = [
+  "Property 'common.follow' was added with value: false",
+  "Property 'common.setting2' was removed",
+  "Property 'common.setting3' was updated. From true to null",
+  "Property 'common.setting4' was added with value: 'blah blah'",
+  "Property 'common.setting5' was added with value: [complex value]",
+  "Property 'common.setting6.doge.wow' was updated. From '' to 'so much'",
+  "Property 'common.setting6.ops' was added with value: 'vops'",
+  "Property 'group1.baz' was updated. From 'bas' to 'bars'",
+  "Property 'group1.nest' was updated. From [complex value] to 'str'",
+  "Property 'group2' was removed",
+  "Property 'group3' was added with value: [complex value]",
+  ];
 
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
@@ -119,6 +131,6 @@ describe('4-Сhecking the Parsers', () => {
 
 describe('5-Сhecking the Plain', () => {
   test('Сhecking the result for compliance with the expected', () => {
-    expect(plain(resulted)).toEqual(resultOfPlain);
+    expect(plain(resulted)).toEqual(resultOfPlain.join('\n'));
   });
 });
