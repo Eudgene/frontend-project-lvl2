@@ -20,20 +20,21 @@ const plain = (value) => {
       .entries(currentValue)
       .map(([key, val]) => {
         const arr = stringWay.split('.');
+        let newStringWay = stringWay;
         if (arr.length !== depth) {
           arr.splice(arr.length - 1, 1);
-          stringWay = arr.join('.');
+          newStringWay = arr.join('.');
         }
-        const wayInString = stringWay === '' ? key : `.${key}`;
+        const wayInString = newStringWay === '' ? key : `.${key}`;
         if (val[0] === 'added') {
-          bbb.push(`Property '${stringWay}${wayInString}' was added with value: ${valueInString(val[1])}`);
+          bbb.push(`Property '${newStringWay}${wayInString}' was added with value: ${valueInString(val[1])}`);
         } else if (val[0] === 'removed') {
-          bbb.push(`Property '${stringWay}${wayInString}' was removed`);
+          bbb.push(`Property '${newStringWay}${wayInString}' was removed`);
         } else if (val[0] === 'updated') {
-          bbb.push(`Property '${stringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
+          bbb.push(`Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
         } else if (val[0] === 'notChanged') {
           if (typeof val[1] === 'object') {
-            newString = stringWay === '' ? key : stringWay += `.${key}`;
+            newString = newStringWay === '' ? key : newStringWay += `.${key}`;
             iter(val[1], newString, depth + 1);
           } else {
             iter(val[1], newString, depth + 1);
