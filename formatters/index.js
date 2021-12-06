@@ -1,7 +1,7 @@
 import stylish from '../formatters/stylish.js';
 import plain from '../formatters/plain.js';
 
-chooseFormat = (base, format) => {
+const chooseFormat = (base, format) => {
   let result;
   if (format === 'stylish') {
     result = stylish(base, ' ', 2);
