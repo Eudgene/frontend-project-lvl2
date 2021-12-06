@@ -2,7 +2,8 @@ import stylish from '../formatters/stylish.js';
 import plain from '../formatters/plain.js';
 
 const chooseFormat = (base, format) => {
-    console.log(format);
+    console.log(format === 'stylish');
+    
   let result;
   if (format === 'stylish') {
     
