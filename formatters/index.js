@@ -5,7 +5,7 @@ const chooseFormat = (base, name) => {
   let result;
   if (name.format === 'stylish') {
     result = stylish(base, ' ', 2);
-  } else if (format.format === 'plain') {
+  } else if (name.format === 'plain') {
     result = plain(base);
   }
   return console.log(result);
