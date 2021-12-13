@@ -70,7 +70,7 @@ const resultOfPlain = [
   "Property 'group3' was added with value: [complex value]",
 ];
 
-const resultInJson = "{'common':['notChanged',{'follow':['added',false],'setting1':['notChanged','Value 1'],'setting2':['removed',200],'setting3':['updated',true,null],'setting4':['added','blah blah'],'setting5':['added',{'key5':'value5'}],'setting6':['notChanged',{'doge':['notChanged',{'wow':['updated','','so much']}],'key':['notChanged','value'],'ops':['added','vops']}]}],'group1':['notChanged',{'baz':['updated','bas','bars'],'foo':['notChanged','bar'],'nest':['updated',{'key':'value'},'str']}],'group2':['removed',{'abc':12345,'deep':{'id':45}}],'group3':['added',{'deep':{'id':{'number':45}},'fee':100500}]}";
+const resultInJson = '{"common":["notChanged",{"follow":["added",false],"setting1":["notChanged","Value 1"],"setting2":["removed",200],"setting3":["updated",true,null],"setting4":["added","blah blah"],"setting5":["added",{"key5":"value5"}],"setting6":["notChanged",{"doge":["notChanged",{"wow":["updated","","so much"]}],"key":["notChanged","value"],"ops":["added","vops"]}]}],"group1":["notChanged",{"baz":["updated","bas","bars"],"foo":["notChanged","bar"],"nest":["updated",{"key":"value"},"str"]}],"group2":["removed",{"abc":12345,"deep":{"id":45}}],"group3":["added",{"deep":{"id":{"number":45}},"fee":100500}]}';
 
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
