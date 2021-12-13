@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 const toJson = (value) => {
   const iter = (currentValue, depth, arrDepth = [0]) => {
     if (currentValue === null) {
@@ -47,7 +45,7 @@ const toJson = (value) => {
     ].join('');
   };
 
-  return iter(value, 1, arrDepth);
+  return iter(value, 1);
 };
 
 export default toJson;
