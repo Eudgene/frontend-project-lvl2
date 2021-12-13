@@ -1,8 +1,7 @@
 import _ from 'lodash';
 
 const toJson = (value) => {
-  const arrDepth = [0];
-  const iter = (currentValue, depth, previusDepth) => {
+  const iter = (currentValue, depth, arrDepth = [0]) => {
     if (currentValue === null) {
       return 'null';
     }
@@ -17,26 +16,26 @@ const toJson = (value) => {
       .map(([key, val]) => {
         if (depth <= arrDepth.pop()) {
           if (val.length === 2) {
-            const newArr = _.last(arrDepth) === depth ? arrDepth : arrDepth.push(depth);
-            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newArr)}]`;
+            arrDepth.push(depth);
+            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
           } else if (val.length === 3) {
             const withkav2 = typeof val[2] === 'string' ? `"${(val[2])}"` : `${(val[2])}`;
-            const newArr = _.last(arrDepth) === depth ? arrDepth : arrDepth.push(depth);
-            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newArr)},${withkav2}]`;
+            arrDepth.push(depth);
+            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${withkav2}]`;
           } else {
-            const newArr = _.last(arrDepth) === depth ? arrDepth : arrDepth.push(depth);
-            bbb = `,"${key}":${iter(val, depth + 1, newArr)}`;
+            arrDepth.push(depth);
+            bbb = `,"${key}":${iter(val, depth + 1, arrDepth)}`;
           }
-        } else if (val.length === 2 ) {
-          const newArr = _.last(arrDepth) === depth ? arrDepth : arrDepth.push(depth);
-          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, newArr)}]`;
+        } else if (val.length === 2) {
+          arrDepth.push(depth);
+          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
         } else if (val.length === 3) {
-          const newArr = _.last(arrDepth) === depth ? arrDepth : arrDepth.push(depth);
+          arrDepth.push(depth);
           const withkav2 = typeof val[2] === 'string' ? `"${(val[2])}"` : `${(val[2])}`;
-          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, newArr)},${withkav2}]`;
+          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${withkav2}]`;
         } else {
-          const newArr = _.last(arrDepth) === depth ? arrDepth : arrDepth.push(depth);
-          bbb = `"${key}":${iter(val, depth + 1, newArr)}`;
+          arrDepth.push(depth);
+          bbb = `"${key}":${iter(val, depth + 1, arrDepth)}`;
         }
 
         return bbb;
@@ -44,10 +43,10 @@ const toJson = (value) => {
     return [
       '{',
       ...lines,
-      `}`,
+      '}',
     ].join('');
   };
-  
+
   return iter(value, 1, arrDepth);
 };
 
