@@ -1,6 +1,6 @@
 const toJson = (value) => {
   const arrDepth = [0];
-  const iter = (currentValue, depth, previusDepth) => {
+  const iter = (currentValue, depth, arrDepth) => {
     if (currentValue === null) {
       return 'null';
     }
@@ -8,7 +8,7 @@ const toJson = (value) => {
       const stringVal = typeof currentValue === 'string' ? `"${currentValue.toString()}"` : `${currentValue.toString()}`;
       return stringVal;
     }
-      
+
     let bbb = {};
     const lines = Object
       .entries(currentValue)
