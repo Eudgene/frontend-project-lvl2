@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import { takeObjectFromJson, newResd } from '../bin/funcs.js';
 import parsFunc from '../bin/parsers.js';
 import plain from '../formatters/plain.js';
+import toJson from '../formatters/json.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -69,6 +70,8 @@ const resultOfPlain = [
   "Property 'group3' was added with value: [complex value]",
 ];
 
+const resultInJson = "{'common':['notChanged',{'follow':['added',false],'setting1':['notChanged','Value 1'],'setting2':['removed',200],'setting3':['updated',true,null],'setting4':['added','blah blah'],'setting5':['added',{'key5':'value5'}],'setting6':['notChanged',{'doge':['notChanged',{'wow':['updated','','so much']}],'key':['notChanged','value'],'ops':['added','vops']}]}],'group1':['notChanged',{'baz':['updated','bas','bars'],'foo':['notChanged','bar'],'nest':['updated',{'key':'value'},'str']}],'group2':['removed',{'abc':12345,'deep':{'id':45}}],'group3':['added',{'deep':{'id':{'number':45}},'fee':100500}]}";
+
 describe('1-Сhecking the work of readFile', () => {
   test('When we get some way', () => {
     const res = readFile('file1.json');
@@ -132,5 +135,11 @@ describe('4-Сhecking the Parsers', () => {
 describe('5-Сhecking the Plain', () => {
   test('Сhecking the result for compliance with the expected', () => {
     expect(plain(resulted)).toEqual(resultOfPlain.join('\n'));
+  });
+});
+
+describe('6-Сhecking the Json', () => {
+  test('Сhecking the result for compliance with the expected', () => {
+    expect(toJson(resulted)).toEqual(resultInJson);
   });
 });
