@@ -1,6 +1,8 @@
+import _ from 'lodash';
+
 const toJson = (value) => {
   const arrDepth = [0];
-  const iter = (currentValue, depth, arrDepth) => {
+  const iter = (currentValue, depth, previusDepth) => {
     if (currentValue === null) {
       return 'null';
     }
@@ -14,7 +16,7 @@ const toJson = (value) => {
       .entries(currentValue)
       .map(([key, val]) => {
         if (depth <= arrDepth.pop()) {
-          if (val.length === 2 ) {
+          if (val.length === 2) {
             const newArr = _.last(arrDepth) === depth ? arrDepth: arrDepth.push(depth);
             bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newArr)}]`;
           } else if (val.length === 3) {
