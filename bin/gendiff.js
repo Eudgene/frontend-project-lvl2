@@ -21,4 +21,5 @@ const starter = () => {
   program.parse();
 };
 
+starter();
 export default starter;
