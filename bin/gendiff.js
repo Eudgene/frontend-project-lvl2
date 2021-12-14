@@ -15,7 +15,7 @@ program
     const json2 = takeObjectFromJson(filepath2);
     const newArr = newResd(json1, json2);
     chooseFormat(newArr, format);
-  })
-  .parse();
+  });
+  //.parse();
 
 export default program;
