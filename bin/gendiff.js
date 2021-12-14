@@ -16,6 +16,5 @@ program
     const newArr = newResd(json1, json2);
     chooseFormat(newArr, format);
   });
-  //.parse();
 
-export default program;
+program.parse();
