@@ -17,4 +17,6 @@ program
     chooseFormat(newArr, format);
   });
 
-export default program.parse();
+program.parse();
+
+export default program;
