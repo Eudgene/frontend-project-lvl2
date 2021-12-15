@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 
-const program = new Command();
+export default program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
   .version('0.0.1', '-V, --version', 'output the version number')
