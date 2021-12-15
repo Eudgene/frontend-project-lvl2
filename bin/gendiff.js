@@ -4,7 +4,6 @@ import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 
-const gendiff = () => {
   const program = new Command();
   program
     .description('Compares two configuration files and shows a difference')
@@ -19,6 +18,3 @@ const gendiff = () => {
     })
     .parse();
   
-};
-
-export default gendiff;
