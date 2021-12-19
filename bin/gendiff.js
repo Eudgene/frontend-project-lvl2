@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 
-const starter = (filepath1, filepath2) => {
+const gindiff = (filepath1, filepath2) => {
   const program = new Command();
   program
     .description('Compares two configuration files and shows a difference')
@@ -20,4 +20,4 @@ const starter = (filepath1, filepath2) => {
     .parse();
 };
 
-export default starter;
+export default gindiff;
