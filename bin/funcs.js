@@ -5,20 +5,6 @@ import parsFunc from './parsers.js';
 
 import { Command } from 'commander';
 import chooseFormat from '../formatters/index.js';
-const program = new Command();
-program
-  .description('Compares two configuration files and shows a difference')
-  .version('0.0.1', '-V, --version', 'output the version number')
-  .arguments('<filepath1> <filepath2>')
-  .option('-f, --format [type]', 'output format', 'stylish', 'stylish')
-  .action((filepath1, filepath2, format = 'stylish') => {
-    const json1 = takeObjectFromJson(filepath1);
-    const json2 = takeObjectFromJson(filepath2);
-    const newArr = newResd(json1, json2);
-    chooseFormat(newArr, format);
-  });
-  
-program.parse();
 
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
@@ -63,3 +49,18 @@ export const newResd = (tree, tree1) => {
     });
   return finishedArray;
 };
+
+const program = new Command();
+program
+  .description('Compares two configuration files and shows a difference')
+  .version('0.0.1', '-V, --version', 'output the version number')
+  .arguments('<filepath1> <filepath2>')
+  .option('-f, --format [type]', 'output format', 'stylish', 'stylish')
+  .action((filepath1, filepath2, format = 'stylish') => {
+    const json1 = takeObjectFromJson(filepath1);
+    const json2 = takeObjectFromJson(filepath2);
+    const newArr = newResd(json1, json2);
+    chooseFormat(newArr, format);
+  });
+  
+program.parse();
