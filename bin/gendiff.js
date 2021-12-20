@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
+import { newResd } from './funcs.js';
+/*import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 
@@ -17,6 +18,6 @@ program
     chooseFormat(newArr, format);
   });
   
-program.parse();
+program.parse();*/
 
 export default newResd;
