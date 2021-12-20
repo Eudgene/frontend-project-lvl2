@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import { newResd, takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 
-const gindiff = () => {
+function gindiff () {
   const program = new Command();
   program
     .description('Compares two configuration files and shows a difference')
