@@ -62,4 +62,4 @@ program
     const newArr = newResd(json1, json2);
     chooseFormat(newArr, format);
   })
-  .parse();
+  .parse(process.argv);
