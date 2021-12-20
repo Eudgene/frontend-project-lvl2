@@ -16,8 +16,9 @@ function gendiff () {
       const json2 = takeObjectFromJson(filepath2);
       const newArr = newResd(json1, json2);
       chooseFormat(newArr, format);
-    })
-    .parse();
+    });
+  
+  return program.parse();
 };
 
 export default gendiff;
