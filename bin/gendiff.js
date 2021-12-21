@@ -42,13 +42,13 @@ const newResd = (tree, tree1) => {
   return finishedArray;
 };
 
-function gendiff(path1, path2) {
+function gendiff() {
 const program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
   .version('0.0.1', '-V, --version', 'output the version number')
-  .arguments('<filepath1>', 'argument', path1)
-  .arguments('<filepath2>', 'argument', path2)
+  .arguments('<filepath1>')
+  .arguments('<filepath2>')
   .option('-f, --format [type]', 'output format', 'stylish', 'stylish')
   .action((filepath1, filepath2, format = 'stylish') => {
     const json1 = takeObjectFromJson(filepath1);
