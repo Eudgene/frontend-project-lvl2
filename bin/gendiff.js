@@ -57,4 +57,4 @@ program
   
 program.parse();
 
-export default newResd;
+export default program.action();
