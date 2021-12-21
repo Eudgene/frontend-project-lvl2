@@ -55,6 +55,6 @@ program
     chooseFormat(newArr, format);
   });
   
-program.parse();
+//program.parse();
 
 export default newResd;
