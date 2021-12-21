@@ -3,6 +3,7 @@
 import { Command } from 'commander';
 import { takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
+import _ from 'lodash';
 
 const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
