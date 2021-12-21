@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-
-/*import { Command } from 'commander';
-import { newResd, takeObjectFromJson } from './funcs.js';
+import { Command } from 'commander';
+import { takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 
 const program = new Command();
@@ -18,7 +17,7 @@ program
     chooseFormat(newArr, format);
   });
   
-program.parse();*/
+program.parse();
 
 const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);

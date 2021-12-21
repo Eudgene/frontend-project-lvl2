@@ -3,9 +3,9 @@ import * as path from 'path';
 import _ from 'lodash';
 import parsFunc from './parsers.js';
 
-import { Command } from 'commander';
+/*import { Command } from 'commander';
 import chooseFormat from '../formatters/index.js';
-import { newResd } from './gendiff.js';
+import { newResd } from './gendiff.js';*/
 
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
@@ -51,7 +51,7 @@ export const takeObjectFromJson = (file) => {
   return finishedArray;
 };*/
 
-const program = new Command();
+/*const program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
   .version('0.0.1', '-V, --version', 'output the version number')
@@ -63,4 +63,4 @@ program
     const newArr = newResd(json1, json2);
     chooseFormat(newArr, format);
   })
-  .parse(process.argv);
+  .parse(process.argv);*/
