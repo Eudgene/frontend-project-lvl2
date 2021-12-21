@@ -57,4 +57,4 @@ program
   
 program.parse();
 
-export default program.action();
+export default program.action;
