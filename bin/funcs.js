@@ -13,8 +13,10 @@ export const takeObjectFromJson = (file) => {
 };
 
 const newResd = (tree, tree1) => {
-  const keys1 = Object.keys(tree1);
-  const keys = Object.keys(tree);
+  const json1 = takeObjectFromJson(tree);
+  const json2 = takeObjectFromJson(tree1);
+  const keys1 = Object.keys(json2);
+  const keys = Object.keys(json1);
   const finishedArray = {};
   _.uniq(keys.concat(keys1).sort())
     .map((item) => {
@@ -22,27 +24,27 @@ const newResd = (tree, tree1) => {
         if (_.isPlainObject(tree1[item])) {
           if (tree[item]) {
             const newItem = 'notChanged';
-            finishedArray[item] = [newItem, newResd(tree[item], tree1[item])];
+            finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
             const newItem1 = 'added';
-            finishedArray[item] = [newItem1, tree1[item]];
+            finishedArray[item] = [newItem1, json1[item]];
           }
-        } else if (tree[item] === tree1[item]) {
+        } else if (tree[item] === json1[item]) {
           const newItem = 'notChanged';
-          finishedArray[item] = [newItem, tree[item]];
+          finishedArray[item] = [newItem, json1[item]];
         } else if (keys.includes(item)) {
           const newItem = 'updated';
-          finishedArray[item] = [newItem, tree[item], tree1[item]];
+          finishedArray[item] = [newItem, json1[item], json2[item]];
         } else {
           const newItem1 = 'added';
-          finishedArray[item] = [newItem1, tree1[item]];
+          finishedArray[item] = [newItem1, json2[item]];
         }
-      } else if (_.isPlainObject(tree[item])) {
+      } else if (_.isPlainObject(json1[item])) {
         const newItem = 'removed';
-        finishedArray[item] = [newItem, tree[item]];
+        finishedArray[item] = [newItem, json1[item]];
       } else {
         const newItem1 = 'removed';
-        finishedArray[item] = [newItem1, tree[item]];
+        finishedArray[item] = [newItem1, json1[item]];
       }
       return finishedArray;
     });
