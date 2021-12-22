@@ -3,9 +3,9 @@ import * as path from 'path';
 import _ from 'lodash';
 import parsFunc from './parsers.js';
 
-import { Command } from 'commander';
-import chooseFormat from '../formatters/index.js';
-import { newResd } from './gendiff.js';
+//import { Command } from 'commander';
+//import chooseFormat from '../formatters/index.js';
+//import { newResd } from './gendiff.js';
 
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
