@@ -21,8 +21,8 @@ const newResd = (tree, tree1) => {
   _.uniq(keys.concat(keys1).sort())
     .map((item) => {
       if (keys1.includes(item)) {
-        if (_.isPlainObject(tree1[item])) {
-          if (tree[item]) {
+        if (_.isPlainObject(json2[item])) {
+          if (json1[item]) {
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
