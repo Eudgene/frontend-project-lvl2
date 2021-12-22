@@ -12,7 +12,7 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-export const newResd = (tree, tree1) => {
+const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
   const keys = Object.keys(tree);
   const finishedArray = {};
@@ -48,3 +48,5 @@ export const newResd = (tree, tree1) => {
     });
   return finishedArray;
 };
+
+export default newResd;
