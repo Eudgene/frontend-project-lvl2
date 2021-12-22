@@ -29,7 +29,7 @@ const newResd = (tree, tree1) => {
             const newItem1 = 'added';
             finishedArray[item] = [newItem1, json1[item]];
           }
-        } else if (tree[item] === json1[item]) {
+        } else if (json2[item] === json1[item]) {
           const newItem = 'notChanged';
           finishedArray[item] = [newItem, json1[item]];
         } else if (keys.includes(item)) {
