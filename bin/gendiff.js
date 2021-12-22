@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { newResd, takeObjectFromJson } from './funcs.js';
+import { takeObjectFromJson } from './funcs.js';
+import newResd from './funcs.js'; 
 import chooseFormat from '../formatters/index.js';
 import _ from 'lodash';
 
