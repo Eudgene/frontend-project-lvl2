@@ -6,8 +6,10 @@ import chooseFormat from '../formatters/index.js';
 import _ from 'lodash';
 
 const newResd = (tree, tree1) => {
-  const keys1 = Object.keys(tree1);
-  const keys = Object.keys(tree);
+  const json1 = takeObjectFromJson(tree);
+  const json2 = takeObjectFromJson(tree1);
+  const keys1 = Object.keys(json2);
+  const keys = Object.keys(json1);
   const finishedArray = {};
   _.uniq(keys.concat(keys1).sort())
     .map((item) => {
@@ -49,12 +51,12 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format [type]', 'output format', 'stylish', 'stylish')
   .action((filepath1, filepath2, format = 'stylish') => {
-    const json1 = takeObjectFromJson(filepath1);
-    const json2 = takeObjectFromJson(filepath2);
-    const newArr = newResd(json1, json2);
+    //const json1 = takeObjectFromJson(filepath1);
+    //const json2 = takeObjectFromJson(filepath2);
+    const newArr = newResd(filepath1, filepath2);
     chooseFormat(newArr, format);
   });
   
 program.parse();
 
-export default program.action;
+export default newResd;
