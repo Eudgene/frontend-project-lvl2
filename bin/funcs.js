@@ -3,9 +3,9 @@ import * as path from 'path';
 import _ from 'lodash';
 import parsFunc from './parsers.js';
 
-/*import { Command } from 'commander';
+import { Command } from 'commander';
 import chooseFormat from '../formatters/index.js';
-import { newResd } from './gendiff.js';*/
+import { newResd } from './gendiff.js';
 
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
@@ -14,7 +14,7 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-/*export const newResd = (tree, tree1) => {
+export const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
   const keys = Object.keys(tree);
   const finishedArray = {};
@@ -49,7 +49,7 @@ export const takeObjectFromJson = (file) => {
       return finishedArray;
     });
   return finishedArray;
-};*/
+};
 
 /*const program = new Command();
 program

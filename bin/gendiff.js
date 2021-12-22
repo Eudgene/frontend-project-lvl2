@@ -5,7 +5,7 @@ import { takeObjectFromJson } from './funcs.js';
 import chooseFormat from '../formatters/index.js';
 import _ from 'lodash';
 
-const newResd = (tree, tree1) => {
+/*const newResd = (tree, tree1) => {
   const keys1 = Object.keys(tree1);
   const keys = Object.keys(tree);
   const finishedArray = {};
@@ -40,7 +40,7 @@ const newResd = (tree, tree1) => {
       return finishedArray;
     });
   return finishedArray;
-};
+};*/
 
 const program = new Command();
 program
@@ -57,4 +57,4 @@ program
   
 program.parse();
 
-export default newResd;
+//export default newResd;
