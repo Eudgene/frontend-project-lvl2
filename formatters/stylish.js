@@ -1,7 +1,8 @@
 const stylish = (value, replacer = ' ', spacesCount = 1) => {
+  console.log(value);
   const iter = (currentValue, depth) => {
     if (typeof currentValue !== 'object') {
-      console.log(currentValue);
+      //console.log(currentValue);
       return currentValue.toString();
     }
     if (currentValue === null) {
@@ -27,7 +28,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
           return prefix;
         };
         if (val.length === 2) {
-          console.log(val);
+          //console.log(val);
           bbb = `${currentIndent}${findPrefix(val[0])}${key}: ${iter(val[1], depth + 2)}`;
         } else if (val.length === 3) {
           bbb = `${currentIndent}${findPrefix(val[0])[0]}${key}: ${iter(val[1], depth + 2)}\n${currentIndent}${findPrefix(val[0])[1]}${key}: ${val[2]}`;
