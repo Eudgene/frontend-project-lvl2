@@ -15,7 +15,7 @@ export const takeObjectFromJson = (file) => {
 const newResd = (tree, tree1) => {
   const json1 = takeObjectFromJson(tree);
   const json2 = takeObjectFromJson(tree1);
-  console.log(json2);
+  
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
   const finishedArray = {};
@@ -23,6 +23,7 @@ const newResd = (tree, tree1) => {
     .map((item) => {
       if (keys1.includes(item)) {
         if (_.isPlainObject(json2[item])) {
+          console.log(json2[item]);
           if (json1[item]) {
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
