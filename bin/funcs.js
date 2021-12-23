@@ -48,7 +48,6 @@ const newResd = (tree, tree1) => {
       }
       return finishedArray;
     });
-    console.log(finishedArray);
   return finishedArray;
 };
 
