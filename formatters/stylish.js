@@ -15,6 +15,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
+        console.log(key, val);
         const findPrefix = (item) => {
           let prefix = '  ';
           if (item === 'added') {
