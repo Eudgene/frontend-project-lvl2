@@ -15,6 +15,7 @@ export const takeObjectFromJson = (file) => {
 const newResd = (tree, tree1) => {
   const json1 = takeObjectFromJson(tree);
   const json2 = takeObjectFromJson(tree1);
+  console.log(json1);
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
   const finishedArray = {};
