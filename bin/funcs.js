@@ -13,6 +13,7 @@ export const takeObjectFromJson = (file) => {
 };
 
 const newResd = (tree, tree1) => {
+  console.log(typeof tree);
   const json1 = takeObjectFromJson(tree);
   const json2 = takeObjectFromJson(tree1);
   const keys1 = Object.keys(json2);
