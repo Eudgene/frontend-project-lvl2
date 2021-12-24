@@ -26,7 +26,7 @@ export const newResd = (tree, tree1) => {
         if (_.isPlainObject(json2[item])) {
           
           if (json1[item]) {
-            console.log(item);
+            console.log(json1[item], json2[item]);
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
