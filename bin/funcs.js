@@ -47,15 +47,17 @@ export const newResd = (tree, tree1) => {
         const newItem1 = 'removed';
         finishedArray[item] = [newItem1, json1[item]];
       }
+      console.log(finishedArray);
       return finishedArray;
     });
-    console.log(finishedArray);
+    
   return finishedArray;
 };
 
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const preResalt = newResd(filepath1, filepath2);
+
   return chooseFormat(preResalt, format);
 };
 
