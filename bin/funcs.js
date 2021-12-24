@@ -16,12 +16,14 @@ export const takeObjectFromJson = (file) => {
 export const newResd = (tree, tree1) => {
   const json1 = typeof tree === 'string' ? takeObjectFromJson(tree) : tree;
   const json2 = typeof tree1 === 'string' ? takeObjectFromJson(tree1) : tree1;
-  console.log(json1, json2);
+  
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
   const finishedArray = {};
   _.uniq(keys.concat(keys1).sort())
     .map((item) => {
+      console.log(item);
+      
       if (keys1.includes(item)) {
         if (_.isPlainObject(json2[item])) {
           if (json1[item]) {
