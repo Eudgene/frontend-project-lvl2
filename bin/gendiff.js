@@ -14,10 +14,7 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format [type]', 'output format', 'stylish', 'stylish')
   .action((filepath1, filepath2, format = 'stylish') => {
-    //const json1 = takeObjectFromJson(filepath1);
-    //const json2 = takeObjectFromJson(filepath2);
-    //const newArr = newResd(filepath1, filepath2);
-    //chooseFormat(newArr, format);
+    console.log(format)
     gendiff(filepath1, filepath2, format = 'stylish');
   });
   

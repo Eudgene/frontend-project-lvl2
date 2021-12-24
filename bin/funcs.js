@@ -50,7 +50,6 @@ export const newResd = (tree, tree1) => {
       }
       return finishedArray;
     });
-    
   return finishedArray;
 };
 
