@@ -22,10 +22,9 @@ export const newResd = (tree, tree1) => {
   const finishedArray = {};
   _.uniq(keys.concat(keys1).sort())
     .map((item) => {
-      console.log(item);
-      
       if (keys1.includes(item)) {
         if (_.isPlainObject(json2[item])) {
+          console.log(item);
           if (json1[item]) {
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
