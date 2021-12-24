@@ -2,8 +2,9 @@
 
 import { Command } from 'commander';
 //import { takeObjectFromJson } from './funcs.js';
-import newResd from './funcs.js'; 
-import chooseFormat from '../formatters/index.js';
+//import newResd from './funcs.js'; 
+//import chooseFormat from '../formatters/index.js';
+import gendiff from './funcs.js';
 import _ from 'lodash';
 
 const program = new Command();
@@ -15,8 +16,9 @@ program
   .action((filepath1, filepath2, format = 'stylish') => {
     //const json1 = takeObjectFromJson(filepath1);
     //const json2 = takeObjectFromJson(filepath2);
-    const newArr = newResd(filepath1, filepath2);
-    chooseFormat(newArr, format);
+    //const newArr = newResd(filepath1, filepath2);
+    //chooseFormat(newArr, format);
+    gendiff(filepath1, filepath2, format = 'stylish');
   });
   
 program.parse();
