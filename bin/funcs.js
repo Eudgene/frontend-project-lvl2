@@ -24,9 +24,7 @@ export const newResd = (tree, tree1) => {
     .map((item) => {
       if (keys1.includes(item)) {
         if (_.isPlainObject(json2[item])) {
-          
           if (json1[item]) {
-            console.log( item ,json2[item]);
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
@@ -50,7 +48,6 @@ export const newResd = (tree, tree1) => {
         const newItem1 = 'removed';
         finishedArray[item] = [newItem1, json1[item]];
       }
-      
       return finishedArray;
     });
     
@@ -61,7 +58,6 @@ export const newResd = (tree, tree1) => {
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   console.log(format);
   const preResalt = newResd(filepath1, filepath2);
-
   return chooseFormat(preResalt, format);
 };
 
