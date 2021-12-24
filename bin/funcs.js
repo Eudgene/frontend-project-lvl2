@@ -24,8 +24,9 @@ export const newResd = (tree, tree1) => {
     .map((item) => {
       if (keys1.includes(item)) {
         if (_.isPlainObject(json2[item])) {
-          console.log(item);
+          
           if (json1[item]) {
+            console.log(item);
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
