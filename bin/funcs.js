@@ -59,6 +59,7 @@ export const newResd = (tree, tree1) => {
 
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
+  console.log(format);
   const preResalt = newResd(filepath1, filepath2);
 
   return chooseFormat(preResalt, format);
