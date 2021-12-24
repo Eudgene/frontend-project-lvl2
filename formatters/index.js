@@ -4,11 +4,11 @@ import toJson from './json.js';
 
 const chooseFormat = (base, name) => {
   let result;
-  if (name.format === 'stylish') {
+  if (name === 'stylish') {
     result = stylish(base, ' ', 2);
-  } else if (name.format === 'plain') {
+  } else if (name === 'plain') {
     result = plain(base);
-  } else if (name.format === 'json') {
+  } else if (name === 'json') {
     result = toJson(base);
   }
   return console.log(result);
