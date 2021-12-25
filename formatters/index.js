@@ -11,7 +11,7 @@ const chooseFormat = (base, name) => {
   } else if (name === 'json') {
     result = toJson(base);
   }
-  return console.log(result);
+  return result;
 };
 
 export default chooseFormat;
