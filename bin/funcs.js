@@ -23,10 +23,13 @@ export const newResd = (tree, tree1) => {
   _.uniq(keys.concat(keys1).sort())
     .map((item) => {
       if (keys1.includes(item)) {
-        if (_.isPlainObject(json2[item])) {
-          if (json1[item]) {
+        if (typeof json2[item] === 'object') {
+          if (typeof json1[item] === 'object') {
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
+          } else if (typeof json1[item] === 'boolean' || typeof json1[item] === 'string') {
+            const newItem = 'updated';
+            finishedArray[item] = [newItem, json1[item], json2[item]];
           } else {
             const newItem1 = 'added';
             finishedArray[item] = [newItem1, json2[item]];
