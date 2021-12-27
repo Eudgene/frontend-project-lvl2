@@ -27,7 +27,7 @@ export const newResd = (tree, tree1) => {
           if (typeof json1[item] === 'object') {
             const newItem = 'notChanged';
             finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
-          } else if (typeof json1[item] === 'boolean' || typeof json1[item] === 'string') {
+          } else if (typeof json1[item] === 'boolean' || typeof json1[item] === 'string' || typeof json1[item] === 'number') {
             const newItem = 'updated';
             finishedArray[item] = [newItem, json1[item], json2[item]];
           } else {
