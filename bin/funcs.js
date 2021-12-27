@@ -26,7 +26,7 @@ export const newResd = (tree, tree1) => {
         if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
           if (typeof json1[item] === 'object') {
             const newItem = 'notChanged';
-            finishedArray[item] = [newItem, goOnTree1(json1[item], json2[item])];
+            finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
             const newItem1 = 'added';
             finishedArray[item] = [newItem1, json2[item]];
