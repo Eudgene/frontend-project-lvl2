@@ -3,7 +3,7 @@ import * as yaml from 'js-yaml';
 
 const parsFunc = (file, pathFile) => {
   const format = path.extname(pathFile);
-  const result;
+  let result;
   if (format === '.json') {
     result = JSON.parse(file);
   } else if (format === '.yml' || format === '.yaml') {
