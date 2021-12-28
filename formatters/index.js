@@ -3,7 +3,7 @@ import plain from './plain.js';
 import toJson from './json.js';
 
 const chooseFormat = (base, name) => {
-  const result = stylish(base, ' ', 2);
+  let result = stylish(base, ' ', 2);
   if (name === 'plain') {
     result = plain(base);
   } else if (name === 'json') {
