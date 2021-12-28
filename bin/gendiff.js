@@ -1,11 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-//import { takeObjectFromJson } from './funcs.js';
-//import newResd from './funcs.js'; 
-//import chooseFormat from '../formatters/index.js';
 import gendiff from './funcs.js';
-import _ from 'lodash';
 
 const program = new Command();
 program

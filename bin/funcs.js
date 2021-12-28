@@ -16,7 +16,7 @@ export const takeObjectFromJson = (file) => {
 export const newResd = (tree, tree1) => {
   const json1 = typeof tree === 'string' ? takeObjectFromJson(tree) : tree;
   const json2 = typeof tree1 === 'string' ? takeObjectFromJson(tree1) : tree1;
-  
+
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
   const finishedArray = {};
@@ -52,7 +52,6 @@ export const newResd = (tree, tree1) => {
     });
   return finishedArray;
 };
-
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const preResalt = newResd(filepath1, filepath2);
