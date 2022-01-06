@@ -15,25 +15,15 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
       .entries(currentValue)
       .map(([key, val]) => {
         const findPrefix = (item) => {
-          //const prefix = '  ';
           if (item === 'added') {
             return '+ ';
           }
-          
           if (item === 'removed') {
             return '- ';
           }
-          
           if (item === 'updated') {
             return ['- ', '+ '];
           }
-          /*if (item === 'added') {
-            prefix = '+ ';
-          } else if (item === 'removed') {
-            prefix = '- ';
-          } else if (item === 'updated') {
-            prefix = ['- ', '+ '];
-          }*/
           return '  ';
         };
         if (val.length === 2) {
