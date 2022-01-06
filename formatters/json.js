@@ -17,7 +17,6 @@ const toJson = (value) => {
             arrDepth.push(depth);
             bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
           } else if (val.length === 3) {
-            const withkav2 = typeof val[2] === 'string' ? `"${(val[2])}"` : `${(val[2])}`;
             arrDepth.push(depth);
             bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${iter(val[2], depth + 1, arrDepth)}]`;
           } else {
