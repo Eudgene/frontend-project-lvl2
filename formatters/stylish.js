@@ -10,12 +10,12 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
     const currentIn = replacer.repeat(indentSize);
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
     const currentIndent = currentIn === undefined ? '' : currentIn;
-    let bbb = {};
+    const bbb = {};
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
         const findPrefix = (item) => {
-          let prefix = '  ';
+          const prefix = '  ';
           if (item === 'added') {
             prefix = '+ ';
           } else if (item === 'removed') {
