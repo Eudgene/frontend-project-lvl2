@@ -10,7 +10,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
     const currentIn = replacer.repeat(indentSize);
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
     const currentIndent = currentIn === undefined ? '' : currentIn;
-    const bbb = {};
+    let bbb = {};
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
