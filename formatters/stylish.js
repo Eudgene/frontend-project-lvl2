@@ -15,18 +15,28 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
       .entries(currentValue)
       .map(([key, val]) => {
         const findPrefix = (item) => {
-          let prefix = '  ';
+          //const prefix = '  ';
           if (item === 'added') {
+            return '+ ';
+          }
+          
+          if (item === 'removed') {
+            return '- ';
+          }
+          
+          if (item === 'updated') {
+            return ['- ', '+ '];
+          }
+          /*if (item === 'added') {
             prefix = '+ ';
           } else if (item === 'removed') {
             prefix = '- ';
           } else if (item === 'updated') {
             prefix = ['- ', '+ '];
-          }
-          return prefix;
+          }*/
+          return '  ';
         };
         if (val.length === 2) {
-          //console.log(val);
           bbb = `${currentIndent}${findPrefix(val[0])}${key}: ${iter(val[1], depth + 2)}`;
         } else if (val.length === 3) {
           bbb = `${currentIndent}${findPrefix(val[0])[0]}${key}: ${iter(val[1], depth + 2)}\n${currentIndent}${findPrefix(val[0])[1]}${key}: ${iter(val[2], depth + 2)}`;
