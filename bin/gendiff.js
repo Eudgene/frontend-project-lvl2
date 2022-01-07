@@ -3,7 +3,7 @@
 import { Command } from 'commander';
 //import gendiff from './funcs.js';
 import chooseFormat from '../formatters/index.js';
-import newResd from './funcs.js';
+import { newResd } from './funcs.js';
 
 const program = new Command();
 program
