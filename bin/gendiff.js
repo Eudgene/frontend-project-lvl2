@@ -5,7 +5,7 @@ import { Command } from 'commander';
 import chooseFormat from '../formatters/index.js';
 import { newResd } from './funcs.js';
 
-export default gendiff = (filepath1, filepath2, format = 'stylish') => {
+export default (filepath1, filepath2, format = 'stylish') => {
   const preResalt = newResd(filepath1, filepath2);
   return chooseFormat(preResalt, format);
 };
