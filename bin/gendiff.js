@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
+import { Command } from 'Commander';
 import gendiff from './funcs.js';
 
 const program = new Command();
