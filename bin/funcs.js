@@ -21,8 +21,6 @@ export const newResd = (tree, tree1) => {
   const keys = Object.keys(json1);
   const finishedArray = {};
   _.sortBy(_.uniq(keys.concat(keys1)))
-  //const myArray = _.uniq(keys.concat(keys1));
-  //const myNewArray = [...myArray].sort();
     .map((item) => {
       if (keys1.includes(item)) {
         if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
