@@ -9,7 +9,7 @@ const chooseFormat = (base, name) => {
   if (name === 'json') {
     return toJson(base);
   }
-  return stylish(base, ' ', 2);;
+  return stylish(base, ' ', 2);
 };
 
 export default chooseFormat;
