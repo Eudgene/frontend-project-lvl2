@@ -15,16 +15,15 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
       .entries(currentValue)
       .map(([key, val]) => {
         const findPrefix = (item) => {
+          let result = '  ';
           if (item === 'added') {
-            return '+ ';
+            result = '+ ';
+          } else if (item === 'removed') {
+            result = '- ';
+          } else if (item === 'updated') {
+            result = ['- ', '+ '];
           }
-          if (item === 'removed') {
-            return '- ';
-          }
-          if (item === 'updated') {
-            return ['- ', '+ '];
-          }
-          return '  ';
+          return result;
         };
         if (val.length === 2) {
           bbb = `${currentIndent}${findPrefix(val[0])}${key}: ${iter(val[1], depth + 2)}`;
