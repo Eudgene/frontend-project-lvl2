@@ -20,7 +20,8 @@ export const newResd = (tree, tree1) => {
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
   const finishedArray = {};
-  _.sortedUniq(keys.concat(keys1))
+  const myArray = keys.concat(keys1);
+  _.sortedUniq(myArray)
   //const myArray = _.uniq(keys.concat(keys1));
   //const myNewArray = [...myArray].sort()
     .map((item) => {
