@@ -5,6 +5,11 @@ import { Command } from 'commander';
 import chooseFormat from '../formatters/index.js';
 import { newResd } from './funcs.js';
 
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
+  const preResalt = newResd(filepath1, filepath2);
+  return chooseFormat(preResalt, format);
+};
+
 const program = new Command();
 program
   .description('Compares two configuration files and shows a difference')
@@ -17,9 +22,6 @@ program
 
 program.parse();
 
-const gendiff = (filepath1, filepath2, format = 'stylish') => {
-  const preResalt = newResd(filepath1, filepath2);
-  return chooseFormat(preResalt, format);
-};
+
 
 export default gendiff;
