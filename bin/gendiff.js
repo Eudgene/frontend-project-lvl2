@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import gendiff from './funcs.js';
+//import gendiff from './funcs.js';
+import chooseFormat from '../formatters/index.js';
+import newResd from './funcs.js';
 
 const program = new Command();
 program
@@ -14,3 +16,10 @@ program
   });
 
 program.parse();
+
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
+  const preResalt = newResd(filepath1, filepath2);
+  return chooseFormat(preResalt, format);
+};
+
+export default gendiff;
