@@ -1,15 +1,16 @@
 const valueInString = (value) => {
-  let result;
   if (value === null) {
-    result = null;
-  } else if (typeof value === 'object') {
-    result = '[complex value]';
-  } else if (typeof value === 'string') {
-    result = `'${value}'`;
-  } else {
-    result = value;
+    return null;
   }
-  return result;
+  if (typeof value === 'object') {
+    return '[complex value]';
+  }
+  if (typeof value === 'string') {
+    return `'${value}'`;
+  } else {
+    return value;
+  }
+  //return result;
 };
 
 const plain = (value) => {
