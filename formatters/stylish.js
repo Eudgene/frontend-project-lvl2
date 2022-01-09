@@ -37,7 +37,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
           //bbb = `${currentIndent}  ${key}: ${iter(val, depth + 2)}`;
           return `${currentIndent}${findPrefix(val[0])}${key}: ${iter(val[1], depth + 2)}`;
         }
-        //return bbb;
+        return bbb;
       });
     return [
       '{',
