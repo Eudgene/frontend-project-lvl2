@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const valueInString = (value) => {
   if (value === null) {
     return null;
