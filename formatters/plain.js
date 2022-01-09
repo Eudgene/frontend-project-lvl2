@@ -7,10 +7,8 @@ const valueInString = (value) => {
   }
   if (typeof value === 'string') {
     return `'${value}'`;
-  } else {
-    return value;
   }
-  //return result;
+  return value;
 };
 
 const plain = (value) => {
