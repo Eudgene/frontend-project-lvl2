@@ -1,6 +1,6 @@
 const stylish = (value, replacer = ' ', spacesCount = 1) => {
-  console.log(value);
   const iter = (currentValue, depth) => {
+    console.log(currentValue);
     if (typeof currentValue !== 'object') {
       return currentValue.toString();
     }
