@@ -38,7 +38,8 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
             return `${currentIndent}  ${k}: ${iter(v, d + 2)}`;
           }
         };
-        return makeTree([key, val], depth);
+        const finishedTree = makeTree([key, val], depth);
+        return finishedTree;
       });
     return [
       '{',
