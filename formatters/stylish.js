@@ -39,6 +39,7 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
         }
         return bbb;
       });
+      console.log(lines)
     return [
       '{',
       ...lines,
