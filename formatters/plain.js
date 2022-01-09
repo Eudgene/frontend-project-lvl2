@@ -22,7 +22,7 @@ const plain = (value) => {
         if (stringWay !== '') {
           const arr = newStringWay.split('.');
           if (arr.length !== depth) {
-            arr.splice(arr.length - 1, 1);
+            _.slice(arr, 0, arr.length - 1);
             newStringWay = arr.join('.');
           }
         }
