@@ -28,15 +28,12 @@ const plain = (value) => {
         }
         const wayInString = newStringWay === '' ? key : `.${key}`;
         if (val[0] === 'added') {
-          //bbb.push(`Property '${newStringWay}${wayInString}' was added with value: ${valueInString(val[1])}`);
           return `Property '${newStringWay}${wayInString}' was added with value: ${valueInString(val[1])}`;
         }
         if (val[0] === 'removed') {
-          //bbb.push(`Property '${newStringWay}${wayInString}' was removed`);
           return `Property '${newStringWay}${wayInString}' was removed`;
         }
         if (val[0] === 'updated') {
-          //bbb.push(`Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
           return `Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`;
         }
         if (val[0] === 'notChanged') {
