@@ -25,18 +25,17 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
           }
           return '  ';
         };
-        if (v.length === 2) {
-          return `${currentIndent}${findPrefix(v[0])}${k}: ${iter(v[1], d + 2)}`;
+        if (val.length === 2) {
+          return `${currentIndent}${findPrefix(val[0])}${key}: ${iter(val[1], depth + 2)}`;
         }
-        if (v.length === 3) {
-          const prefix1 = findPrefix(v[0])[0];
-          const prefix2 = findPrefix(v[0])[1];
-          return `${currentIndent}${prefix1}${k}: ${iter(v[1], d + 2)}\n${currentIndent}${prefix2}${k}: ${iter(v[2], d + 2)}`;
+        if (val.length === 3) {
+          const prefix1 = findPrefix(val[0])[0];
+          const prefix2 = findPrefix(val[0])[1];
+          return `${currentIndent}${prefix1}${key}: ${iter(val[1], depth + 2)}\n${currentIndent}${prefix2}${key}: ${iter(val[2], depth + 2)}`;
         }
-        if (v.length !== 3 && v.length !== 2) {
-          return `${currentIndent}  ${k}: ${iter(v, d + 2)}`;
+        if (val.length !== 3 && val.length !== 2) {
+          return `${currentIndent}  ${key}: ${iter(val, depth + 2)}`;
         }
-        
         return '';
       });
     return [
