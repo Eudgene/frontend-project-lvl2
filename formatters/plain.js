@@ -14,7 +14,6 @@ const valueInString = (value) => {
 };
 
 const plain = (value) => {
-  let newString;
   const bbb = [];
   const iter = (currentValue, stringWay = '', depth = 0) => {
     const lines = Object
@@ -36,8 +35,8 @@ const plain = (value) => {
         } else if (val[0] === 'updated') {
           bbb.push(`Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
         } else if (val[0] === 'notChanged') {
+          const newString = newStringWay === '' ? key : newStringWay += `.${key}`;
           if (typeof val[1] === 'object') {
-            newString = newStringWay === '' ? key : newStringWay += `.${key}`;
             iter(val[1], newString, depth + 1);
           } else {
             iter(val[1], newString, depth + 1);
