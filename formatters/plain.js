@@ -14,7 +14,6 @@ const valueInString = (value) => {
 };
 
 const plain = (value) => {
-  const bbb = [];
   const iter = (currentValue, stringWay = '', depth = 0) => {
     const lines = Object
       .entries(currentValue)
@@ -29,11 +28,16 @@ const plain = (value) => {
         }
         const wayInString = newStringWay === '' ? key : `.${key}`;
         if (val[0] === 'added') {
-          bbb.push(`Property '${newStringWay}${wayInString}' was added with value: ${valueInString(val[1])}`);
-        } else if (val[0] === 'removed') {
-          bbb.push(`Property '${newStringWay}${wayInString}' was removed`);
-        } else if (val[0] === 'updated') {
-          bbb.push(`Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
+          //bbb.push(`Property '${newStringWay}${wayInString}' was added with value: ${valueInString(val[1])}`);
+          return `Property '${newStringWay}${wayInString}' was added with value: ${valueInString(val[1])}`;
+        }
+        if (val[0] === 'removed') {
+          //bbb.push(`Property '${newStringWay}${wayInString}' was removed`);
+          return `Property '${newStringWay}${wayInString}' was removed`;
+        }
+        if (val[0] === 'updated') {
+          //bbb.push(`Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`);
+          return `Property '${newStringWay}${wayInString}' was updated. From ${valueInString(val[1])} to ${valueInString(val[2])}`;
         } else if (val[0] === 'notChanged') {
           const newString = newStringWay === '' ? key : newStringWay += `.${key}`;
           if (typeof val[1] === 'object') {
@@ -46,8 +50,8 @@ const plain = (value) => {
       });
 
     return [
-      ...lines[lines.length - 1],
-    ].join('\n');
+      ...lines,
+    ].filter(Boolean).join('\n').trim();
   };
 
   return iter(value);
