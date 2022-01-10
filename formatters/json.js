@@ -16,25 +16,25 @@ const toJson = (value) => {
       .map(([key, val]) => {
         if (depth <= _.last(arrDepth)) {
           if (val.length === 2) {
-            arrDepth.push(depth);
-            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
+            const newArrDepth = arrDepth.concat(depth);
+            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newArrDepth)}]`;
           } else if (val.length === 3) {
-            arrDepth.push(depth);
-            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${iter(val[2], depth + 1, arrDepth)}]`;
+            const newArrDepth = arrDepth.concat(depth);
+            bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newArrDepth)},${iter(val[2], depth + 1, newArrDepth)}]`;
           } else {
-            arrDepth.push(depth);
-            bbb = `,"${key}":${iter(val, depth + 1, arrDepth)}`;
+            const newArrDepth = arrDepth.concat(depth);
+            bbb = `,"${key}":${iter(val, depth + 1, newArrDepth)}`;
           }
         } else if (val.length === 2) {
-          arrDepth.push(depth);
-          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
+          const newArrDepth = arrDepth.concat(depth);
+          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, newArrDepth)}]`;
         } else if (val.length === 3) {
-          arrDepth.push(depth);
+          const newArrDepth = arrDepth.concat(depth);
           const withkav2 = typeof val[2] === 'string' ? `"${(val[2])}"` : `${(val[2])}`;
-          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${withkav2}]`;
+          bbb = `"${key}":["${val[0]}",${iter(val[1], depth + 1, newArrDepth)},${withkav2}]`;
         } else {
-          arrDepth.push(depth);
-          bbb = `"${key}":${iter(val, depth + 1, arrDepth)}`;
+          const newArrDepth = arrDepth.concat(depth);
+          bbb = `"${key}":${iter(val, depth + 1, newArrDepth)}`;
         }
 
         return bbb;
