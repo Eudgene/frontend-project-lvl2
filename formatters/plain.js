@@ -42,10 +42,9 @@ const plain = (value) => {
         if (val[0] === 'notChanged') {
           const newString = newStringWay === '' ? key : newStringWay += `.${key}`;
           if (typeof val[1] === 'object') {
-            iter(val[1], newString, depth + 1);
-          } else {
-            iter(val[1], newString, depth + 1);
+            return iter(val[1], newString, depth + 1);
           }
+          return iter(val[1], newString, depth + 1);
         }
         return ' ';
       });
