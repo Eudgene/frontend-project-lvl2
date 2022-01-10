@@ -25,21 +25,19 @@ const stylish = (value, replacer = ' ', spacesCount = 1) => {
           }
           return '  ';
         };
-        const makeTree = ([k, v], d) => {
-          if (v.length === 2) {
-            return `${currentIndent}${findPrefix(v[0])}${k}: ${iter(v[1], d + 2)}`;
-          }
-          if (v.length === 3) {
-            const prefix1 = findPrefix(v[0])[0];
-            const prefix2 = findPrefix(v[0])[1];
-            return `${currentIndent}${prefix1}${k}: ${iter(v[1], d + 2)}\n${currentIndent}${prefix2}${k}: ${iter(v[2], d + 2)}`;
-          }
-          if (v.length !== 3 && v.length !== 2) {
-            return `${currentIndent}  ${k}: ${iter(v, d + 2)}`;
-          }
-        };
-        const finishedTree = makeTree([key, val], depth);
-        return finishedTree;
+        if (v.length === 2) {
+          return `${currentIndent}${findPrefix(v[0])}${k}: ${iter(v[1], d + 2)}`;
+        }
+        if (v.length === 3) {
+          const prefix1 = findPrefix(v[0])[0];
+          const prefix2 = findPrefix(v[0])[1];
+          return `${currentIndent}${prefix1}${k}: ${iter(v[1], d + 2)}\n${currentIndent}${prefix2}${k}: ${iter(v[2], d + 2)}`;
+        }
+        if (v.length !== 3 && v.length !== 2) {
+          return `${currentIndent}  ${k}: ${iter(v, d + 2)}`;
+        }
+        
+        return '';
       });
     return [
       '{',
