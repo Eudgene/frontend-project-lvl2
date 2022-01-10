@@ -46,7 +46,7 @@ const plain = (value) => {
             iter(val[1], newString, depth + 1);
           }
         }
-        return bbb;
+        return ' ';
       });
 
     return [
