@@ -19,7 +19,7 @@ const plain = (value) => {
       .entries(currentValue)
       .map(([key, val]) => {
         const findPrefix = (way) => {
-          if(way !== '') {
+          if (way !== '') {
             const arr = way.split('.');
             if (arr.length !== depth) {
               _.slice(arr, 0, arr.length - 1);
@@ -27,7 +27,7 @@ const plain = (value) => {
             }
           }
           return way;
-        }
+        };
         const prefixWay = findPrefix(stringWay);
         const wayInString = prefixWay === '' ? key : `.${key}`;
         if (val[0] === 'added') {
@@ -41,7 +41,7 @@ const plain = (value) => {
         }
         if (val[0] === 'notChanged') {
           const prefix = findPrefix(stringWay);
-          const newPrefix = findPrefix(stringWay) + `.${key}`;
+          const newPrefix = `${prefix}.${key}`;
           const newString = prefix === '' ? key : newPrefix;
           if (typeof val[1] === 'object') {
             return iter(val[1], newString, depth + 1);
