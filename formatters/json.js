@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const toJson = (value) => {
-  const iter = (currentValue, depth, arrDepth = 0) => {
+  const iter = (currentValue, depth, arrDepth = [0]) => {
     if (currentValue === null) {
       return 'null';
     }
@@ -13,40 +13,33 @@ const toJson = (value) => {
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
-        if (depth <= arrDepth) {
-          console.log(depth, arrDepth)
+        if (depth <= _.last(arrDepth)) {
           //arrDepth.concat(depth);
           if (val.length === 2) {
             //arrDepth.push(depth);
-            const newDepth = depth;
-            return `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newDepth)}]`;
+            return `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
           }
           if (val.length === 3) {
             //arrDepth.push(depth);
-            const newDepth = depth;
-            return `,"${key}":["${val[0]}",${iter(val[1], depth + 1, newDepth)},${iter(val[2], depth + 1, newDepth)}]`;
+            return `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${iter(val[2], depth + 1, arrDepth)}]`;
           }
           if (val.length !== 3 && val.length !== 2) {
             //arrDepth.push(depth);
-            const newDepth = depth;
-            return `,"${key}":${iter(val, depth + 1, newDepth)}`;
+            return `,"${key}":${iter(val, depth + 1, arrDepth)}`;
           }
         }
         if (val.length === 2) {
-          //arrDepth.push(depth);
-          const newDepth = depth;
-          return `"${key}":["${val[0]}",${iter(val[1], depth + 1, newDepth)}]`;
+          arrDepth.push(depth);
+          return `"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
         }
         if (val.length === 3) {
-          //arrDepth.push(depth);
-          const newDepth = depth;
+          arrDepth.push(depth);
           const withkav2 = typeof val[2] === 'string' ? `"${(val[2])}"` : `${(val[2])}`;
-          return `"${key}":["${val[0]}",${iter(val[1], depth + 1, newDepth)},${withkav2}]`;
+          return `"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${withkav2}]`;
         }
         if (val.length !== 3 && val.length !== 2) {
-          //arrDepth.push(depth);
-          const newDepth = depth;
-          return `"${key}":${iter(val, depth + 1, newDepth)}`;
+          arrDepth.push(depth);
+          return `"${key}":${iter(val, depth + 1, arrDepth)}`;
         }
         return '';
       });
