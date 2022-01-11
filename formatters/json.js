@@ -14,16 +14,17 @@ const toJson = (value) => {
       .entries(currentValue)
       .map(([key, val]) => {
         if (depth <= _.last(arrDepth)) {
+          arrDepth.concat(depth);
           if (val.length === 2) {
-            arrDepth.push(depth);
+            //arrDepth.push(depth);
             return `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)}]`;
           }
           if (val.length === 3) {
-            arrDepth.push(depth);
+            //arrDepth.push(depth);
             return `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${iter(val[2], depth + 1, arrDepth)}]`;
           }
           if (val.length !== 3 && val.length !== 2) {
-            arrDepth.push(depth);
+            //arrDepth.push(depth);
             return `,"${key}":${iter(val, depth + 1, arrDepth)}`;
           }
         }
