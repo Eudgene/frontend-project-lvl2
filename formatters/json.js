@@ -22,7 +22,8 @@ const toJson = (value) => {
             arrDepth.push(depth);
             bbb = `,"${key}":["${val[0]}",${iter(val[1], depth + 1, arrDepth)},${iter(val[2], depth + 1, arrDepth)}]`;
           } else {
-            arrDepth.push(depth);
+            //arrDepth.push(depth);
+            arrDepth.concat(depth);
             bbb = `,"${key}":${iter(val, depth + 1, arrDepth)}`;
           }
         } else if (val.length === 2) {
