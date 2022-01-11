@@ -10,7 +10,6 @@ const toJson = (value) => {
       return stringVal;
     }
 
-    let bbb = {};
     const lines = Object
       .entries(currentValue)
       .map(([key, val]) => {
