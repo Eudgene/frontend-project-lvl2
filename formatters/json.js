@@ -14,6 +14,7 @@ const toJson = (value) => {
       .entries(currentValue)
       .map(([key, val]) => {
         if (depth <= arrDepth) {
+          console.log(depth, arrDepth)
           //arrDepth.concat(depth);
           if (val.length === 2) {
             //arrDepth.push(depth);
