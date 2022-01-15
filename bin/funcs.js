@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import _ from 'lodash';
 import parsFunc from './parsers.js';
-import chooseFormat from '../formatters/index.js';
+//import chooseFormat from '../formatters/index.js';
 
 export const takeObjectFromJson = (file) => {
   const filePath = path.isAbsolute(file) ? file : path.resolve(process.cwd(), file);
@@ -52,10 +52,3 @@ export const newResd = (tree, tree1) => {
     });
   return finishedArray;
 };
-
-const gendiff = (filepath1, filepath2, format = 'stylish') => {
-  const preResalt = newResd(filepath1, filepath2);
-  return chooseFormat(preResalt, format);
-};
-
-export default gendiff;
