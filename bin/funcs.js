@@ -21,34 +21,34 @@ export const newResd = (tree, tree1) => {
   const keys = Object.keys(json1);
   const finishedArray= _.sortBy(_.uniq(keys.concat(keys1)));
   const newTree = finishedArray.reduce((newObj, item) => {
-      if (keys1.includes(item)) {
-        if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
-          if (typeof json1[item] === 'object') {
-            const newItem = 'notChanged';
-            newObj[item] = [newItem, newResd(json1[item], json2[item])];
-          } else {
-            const newItem1 = 'added';
-            newObj[item] = [newItem1, json2[item]];
-          }
-        } else if (json2[item] === json1[item]) {
+    if (keys1.includes(item)) {
+      if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
+        if (typeof json1[item] === 'object') {
           const newItem = 'notChanged';
-          newObj[item] = [newItem, json1[item]];
-        } else if (keys.includes(item)) {
-          const newItem = 'updated';
-          newObj[item] = [newItem, json1[item], json2[item]];
+          newObj[item] = [newItem, newResd(json1[item], json2[item])];
         } else {
           const newItem1 = 'added';
           newObj[item] = [newItem1, json2[item]];
         }
-      } else if (_.isPlainObject(json1[item])) {
-        const newItem = 'removed';
+      } else if (json2[item] === json1[item]) {
+        const newItem = 'notChanged';
         newObj[item] = [newItem, json1[item]];
+      } else if (keys.includes(item)) {
+        const newItem = 'updated';
+        newObj[item] = [newItem, json1[item], json2[item]];
       } else {
-        const newItem1 = 'removed';
-        newObj[item] = [newItem1, json1[item]];
+        const newItem1 = 'added';
+        newObj[item] = [newItem1, json2[item]];
       }
-      return newObj;
-    }, {});
+    } else if (_.isPlainObject(json1[item])) {
+      const newItem = 'removed';
+      newObj[item] = [newItem, json1[item]];
+    } else {
+      const newItem1 = 'removed';
+      newObj[item] = [newItem1, json1[item]];
+    }
+    return newObj;
+  }, {});
   return newTree;
 };
 
