@@ -19,38 +19,37 @@ export const newResd = (tree, tree1) => {
 
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
-  const finishedArray = {};
-  _.sortBy(_.uniq(keys.concat(keys1)))
-    .map((item) => {
+  const finishedArray= _.sortBy(_.uniq(keys.concat(keys1)));
+  const newTree = finishedArray.reduce((newObj, item) => {
       if (keys1.includes(item)) {
         if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
           if (typeof json1[item] === 'object') {
             const newItem = 'notChanged';
-            finishedArray[item] = [newItem, newResd(json1[item], json2[item])];
+            newObj[item] = [newItem, newResd(json1[item], json2[item])];
           } else {
             const newItem1 = 'added';
-            finishedArray[item] = [newItem1, json2[item]];
+            newObj[item] = [newItem1, json2[item]];
           }
         } else if (json2[item] === json1[item]) {
           const newItem = 'notChanged';
-          finishedArray[item] = [newItem, json1[item]];
+          newObj[item] = [newItem, json1[item]];
         } else if (keys.includes(item)) {
           const newItem = 'updated';
-          finishedArray[item] = [newItem, json1[item], json2[item]];
+          newObj[item] = [newItem, json1[item], json2[item]];
         } else {
           const newItem1 = 'added';
-          finishedArray[item] = [newItem1, json2[item]];
+          newObj[item] = [newItem1, json2[item]];
         }
       } else if (_.isPlainObject(json1[item])) {
         const newItem = 'removed';
-        finishedArray[item] = [newItem, json1[item]];
+        newObj[item] = [newItem, json1[item]];
       } else {
         const newItem1 = 'removed';
-        finishedArray[item] = [newItem1, json1[item]];
+        newObj[item] = [newItem1, json1[item]];
       }
-      return finishedArray;
+      return newObj;
     });
-  return finishedArray;
+  return newTree;
 };
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
