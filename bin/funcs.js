@@ -48,7 +48,7 @@ export const newResd = (tree, tree1) => {
         newObj[item] = [newItem1, json1[item]];
       }
       return newObj;
-    });
+    }, {});
   return newTree;
 };
 
