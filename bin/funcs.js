@@ -19,7 +19,57 @@ export const newResd = (tree, tree1) => {
 
   const keys1 = Object.keys(json2);
   const keys = Object.keys(json1);
-  const finishedArray= _.sortBy(_.uniq(keys.concat(keys1)));
+  const finishedArray = _.sortBy(_.uniq(keys.concat(keys1)));
+  const result = finishedArray.map((item) => {
+      if (keys1.includes(item)) {
+        if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
+          if (typeof json1[item] === 'object') {
+            const prefix = 'notChanged';
+            const value = goOnTree1(json1[item], json2[item]);
+            return {item, prefix, value};
+          } else {
+            
+            const prefix = 'added';
+            const value = json2[item];
+            return {item, prefix, value};
+          }
+        }
+        if (json2[item] === json1[item]) {
+          const prefix = 'notChanged';
+          const value = json1[item];
+          return {item, prefix, value};
+        }
+        if (keys.includes(item)) {
+          const prefix = 'updated';
+          const val = chekingForObject(json1[item]);
+          const val2 = chekingForObject(json2[item]);
+          const value = chekingForNull(val);
+          const value2 = chekingForNull(val2);
+          return {item, prefix, value, value2};
+        } else {
+          const prefix = 'added';
+          const val = chekingForObject(json2[item]);
+          const value = chekingForNull(val);
+          return {item, prefix, value};
+        }
+      }
+      if (_.isPlainObject(json1[item])) {
+        const prefix = 'removed';
+        const val = chekingForObject(json1[item]);
+        const value = chekingForNull(val);
+        return {item, prefix, value};
+      } else {
+        const prefix = 'removed';
+        const val = chekingForObject(json1[item]);
+        const value = chekingForNull(val);
+        return {item, prefix, value};
+      }
+      return '';
+    });
+  return result;
+  /*const keys1 = Object.keys(json2);
+  const keys = Object.keys(json1);
+  const finishedArray = _.sortBy(_.uniq(keys.concat(keys1)));
   const newTree = finishedArray.reduce((newObj, item) => {
     if (keys1.includes(item)) {
       if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
@@ -49,7 +99,7 @@ export const newResd = (tree, tree1) => {
     }
     return newObj;
   }, {});
-  return newTree;
+  return newTree;*/
 };
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
