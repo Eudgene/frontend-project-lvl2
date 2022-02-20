@@ -1,7 +1,8 @@
 import _ from 'lodash';
 
 const toJson = (value) => {
-  const iter = (currentValue, depth, arrDepth = [0]) => {
+  return JSON.stringify(value);
+  /*const iter = (currentValue, depth, arrDepth = [0]) => {
     if (currentValue === null) {
       return 'null';
     }
@@ -45,7 +46,7 @@ const toJson = (value) => {
     ].join('');
   };
 
-  return iter(value, 1);
+  return iter(value, 1);*/
 };
 
 export default toJson;
