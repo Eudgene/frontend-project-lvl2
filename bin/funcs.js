@@ -13,6 +13,34 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
+const chekingForNull = (item) => {
+  if (item === null) {
+    return null;
+  } 
+  return typeof item === 'object' ? [item] : item;
+};
+
+const chekingForObject = (it) => {
+  if (it === null) {
+    return null;
+  } 
+  if (typeof it === 'object') {
+    const prefix = '';
+    const keys = Object.keys(it);
+    for (const item of keys) {
+      if (typeof it[item] === 'object'){
+        
+        const value = [chekingForObject(it[item])];
+        return {item, prefix, value};
+      }
+      const value = it[item];
+      
+      return {item, prefix, value};
+    }
+  }
+  return it;
+};
+
 export const newResd = (tree, tree1) => {
   const json1 = typeof tree === 'string' ? takeObjectFromJson(tree) : tree;
   const json2 = typeof tree1 === 'string' ? takeObjectFromJson(tree1) : tree1;
@@ -25,7 +53,7 @@ export const newResd = (tree, tree1) => {
         if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
           if (typeof json1[item] === 'object') {
             const prefix = 'notChanged';
-            const value = goOnTree1(json1[item], json2[item]);
+            const value = newResd(json1[item], json2[item]);
             return {item, prefix, value};
           } else {
             
