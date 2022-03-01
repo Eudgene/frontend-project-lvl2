@@ -23,21 +23,22 @@ const chekingForNull = (item) => {
 const chekingForObject = (it) => {
   if (it === null) {
     return null;
-  } 
+  }
   if (typeof it === 'object') {
     const prefix = '';
     const keys = Object.keys(it);
-    for (const item of keys) {
-      if (typeof it[item] === 'object'){
-        
-        const value = [chekingForObject(it[item])];
+    const newArr = keys.map((element) => {
+      if(typeof it[element] === 'object') {
+        const value = chekingForObject(it[element]);
+        const item = element;
         return {item, prefix, value};
       }
-      const value = it[item];
-      
+      const value = it[element];
+      const item = element;
       return {item, prefix, value};
-    }
-  }
+    });
+    return newArr;
+  } 
   return it;
 };
 
@@ -69,27 +70,22 @@ export const newResd = (tree, tree1) => {
         }
         if (keys.includes(item)) {
           const prefix = 'updated';
-          const val = chekingForObject(json1[item]);
-          const val2 = chekingForObject(json2[item]);
-          const value = chekingForNull(val);
-          const value2 = chekingForNull(val2);
+          const value = chekingForObject(json1[item]);
+          const value2 = chekingForObject(json2[item]);
           return {item, prefix, value, value2};
         } else {
           const prefix = 'added';
-          const val = chekingForObject(json2[item]);
-          const value = chekingForNull(val);
+          const value = chekingForObject(json2[item]);
           return {item, prefix, value};
         }
       }
       if (_.isPlainObject(json1[item])) {
         const prefix = 'removed';
-        const val = chekingForObject(json1[item]);
-        const value = chekingForNull(val);
+        const value = chekingForObject(json1[item]);
         return {item, prefix, value};
       } else {
         const prefix = 'removed';
-        const val = chekingForObject(json1[item]);
-        const value = chekingForNull(val);
+        const value = chekingForObject(json1[item]);
         return {item, prefix, value};
       }
       return '';
