@@ -13,13 +13,6 @@ export const takeObjectFromJson = (file) => {
   return readJson;
 };
 
-const chekingForNull = (item) => {
-  if (item === null) {
-    return null;
-  }
-  return typeof item === 'object' ? [item] : item;
-};
-
 const chekingForObject = (it) => {
   if (it === null) {
     return null;
@@ -84,7 +77,6 @@ export const newResd = (tree, tree1) => {
     const prefix = 'removed';
     const value = chekingForObject(json1[item]);
     return { item, prefix, value };
-    //return '';
   });
   return result;
 };
