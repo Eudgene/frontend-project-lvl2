@@ -56,11 +56,10 @@ export const newResd = (tree, tree1) => {
           const prefix = 'notChanged';
           const value = newResd(json1[item], json2[item]);
           return { item, prefix, value };
-        } else {
-          const prefix = 'added';
-          const value = json2[item];
-          return { item, prefix, value };
         }
+        const prefix = 'added';
+        const value = json2[item];
+        return { item, prefix, value };
       }
       if (json2[item] === json1[item]) {
         const prefix = 'notChanged';
@@ -72,24 +71,22 @@ export const newResd = (tree, tree1) => {
         const value = chekingForObject(json1[item]);
         const value2 = chekingForObject(json2[item]);
         return { item, prefix, value, value2 };
-      } else {
-        const prefix = 'added';
-        const value = chekingForObject(json2[item]);
-        return { item, prefix, value };
       }
+      const prefix = 'added';
+      const value = chekingForObject(json2[item]);
+      return { item, prefix, value };
     }
     if (_.isPlainObject(json1[item])) {
       const prefix = 'removed';
       const value = chekingForObject(json1[item]);
       return { item, prefix, value };
-    } else {
-      const prefix = 'removed';
-      const value = chekingForObject(json1[item]);
-      return { item, prefix, value };
     }
-    return '';
+    const prefix = 'removed';
+    const value = chekingForObject(json1[item]);
+    return { item, prefix, value };
+    //return '';
   });
-return result;
+  return result;
 };
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
