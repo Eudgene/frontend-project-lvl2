@@ -40,7 +40,7 @@ const stylish = (val, replacer = ' ', spacesCount = 1) => {
       }
       const val1 = typeof value === 'object' ? value : iter(value, depth + 2);
       return `${currentIndent}${findPrefix(prefix)}${item}: ${val1}`;
-      });
+    });
     return [
       '{',
       ...lines,
