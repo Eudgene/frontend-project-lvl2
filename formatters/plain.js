@@ -15,8 +15,8 @@ const valueInString = (value) => {
 
 const plain = (val) => {
   const iter = (currentValue, stringWay = '', depth = 0) => {
-    const lines = currentValue.map(({ 
-      item, prefix, value, value2 
+    const lines = currentValue.map(({
+      item, prefix, value, value2,
     }) => {
       const findPrefix = (way) => {
         if (way !== '') {
