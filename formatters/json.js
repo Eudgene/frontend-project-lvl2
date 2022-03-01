@@ -1,4 +1,3 @@
-
 const toJson = (value) => {
   return JSON.stringify(value);
 };

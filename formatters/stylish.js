@@ -17,24 +17,25 @@ const stylish = (val, replacer = ' ', spacesCount = 1) => {
     const lines = currentValue.map(({
       item, prefix, value, value2,
     }) => {
-      const findPrefix = (item) => {
-        if (item === 'added') {
+      const findPrefix = (it) => {
+        if (it === 'added') {
           return '+ ';
         }
-        if (item === 'removed') {
+        if (it === 'removed') {
           return '- ';
         }
-        if (item === 'updated') {
+        if (it === 'updated') {
           return ['- ', '+ '];
         }
         return '  ';
       };
-      if (typeof value === 'object') { 
-        if (value2 !== undefined) {  
+      if (typeof value === 'object') {
+        if (value2 !== undefined) {
           return `${currentIndent}${findPrefix(prefix)[0]}${item}: ${iter(value, depth + 2)}\n${currentIndent}${findPrefix(prefix)[1]}${item}: ${iter(value2, depth + 2)}`;
         }
         return `${currentIndent}${findPrefix(prefix)}${item}: ${iter(value, depth + 2)}`;
-      } else if (value2 !== undefined) {
+      }
+      if (value2 !== undefined) {
         return `${currentIndent}${findPrefix(prefix)[0]}${item}: ${iter(value, depth + 2)}\n${currentIndent}${findPrefix(prefix)[1]}${item}: ${iter(value2, depth + 2)}`;
       }
       const val1 = typeof value === 'object' ? value : iter(value, depth + 2);

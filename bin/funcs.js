@@ -63,7 +63,9 @@ export const newResd = (tree, tree1) => {
         const prefix = 'updated';
         const value = chekingForObject(json1[item]);
         const value2 = chekingForObject(json2[item]);
-        return { item, prefix, value, value2 };
+        return {
+          item, prefix, value, value2,
+        };
       }
       const prefix = 'added';
       const value = chekingForObject(json2[item]);
