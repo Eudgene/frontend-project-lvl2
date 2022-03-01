@@ -16,7 +16,7 @@ export const takeObjectFromJson = (file) => {
 const chekingForNull = (item) => {
   if (item === null) {
     return null;
-  } 
+  }
   return typeof item === 'object' ? [item] : item;
 };
 
@@ -28,17 +28,17 @@ const chekingForObject = (it) => {
     const prefix = '';
     const keys = Object.keys(it);
     const newArr = keys.map((element) => {
-      if(typeof it[element] === 'object') {
+      if (typeof it[element] === 'object') {
         const value = chekingForObject(it[element]);
         const item = element;
-        return {item, prefix, value};
+        return { item, prefix, value };
       }
       const value = it[element];
       const item = element;
-      return {item, prefix, value};
+      return { item, prefix, value };
     });
     return newArr;
-  } 
+  }
   return it;
 };
 
@@ -50,80 +50,46 @@ export const newResd = (tree, tree1) => {
   const keys = Object.keys(json1);
   const finishedArray = _.sortBy(_.uniq(keys.concat(keys1)));
   const result = finishedArray.map((item) => {
-      if (keys1.includes(item)) {
-        if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
-          if (typeof json1[item] === 'object') {
-            const prefix = 'notChanged';
-            const value = newResd(json1[item], json2[item]);
-            return {item, prefix, value};
-          } else {
-            
-            const prefix = 'added';
-            const value = json2[item];
-            return {item, prefix, value};
-          }
-        }
-        if (json2[item] === json1[item]) {
-          const prefix = 'notChanged';
-          const value = json1[item];
-          return {item, prefix, value};
-        }
-        if (keys.includes(item)) {
-          const prefix = 'updated';
-          const value = chekingForObject(json1[item]);
-          const value2 = chekingForObject(json2[item]);
-          return {item, prefix, value, value2};
-        } else {
-          const prefix = 'added';
-          const value = chekingForObject(json2[item]);
-          return {item, prefix, value};
-        }
-      }
-      if (_.isPlainObject(json1[item])) {
-        const prefix = 'removed';
-        const value = chekingForObject(json1[item]);
-        return {item, prefix, value};
-      } else {
-        const prefix = 'removed';
-        const value = chekingForObject(json1[item]);
-        return {item, prefix, value};
-      }
-      return '';
-    });
-  return result;
-  /*const keys1 = Object.keys(json2);
-  const keys = Object.keys(json1);
-  const finishedArray = _.sortBy(_.uniq(keys.concat(keys1)));
-  const newTree = finishedArray.reduce((newObj, item) => {
     if (keys1.includes(item)) {
       if (typeof json2[item] === 'object' && json2[item] !== null && typeof json1[item] === 'object') {
         if (typeof json1[item] === 'object') {
-          const newItem = 'notChanged';
-          newObj[item] = [newItem, newResd(json1[item], json2[item])];
+          const prefix = 'notChanged';
+          const value = newResd(json1[item], json2[item]);
+          return { item, prefix, value };
         } else {
-          const newItem1 = 'added';
-          newObj[item] = [newItem1, json2[item]];
+          const prefix = 'added';
+          const value = json2[item];
+          return { item, prefix, value };
         }
-      } else if (json2[item] === json1[item]) {
-        const newItem = 'notChanged';
-        newObj[item] = [newItem, json1[item]];
-      } else if (keys.includes(item)) {
-        const newItem = 'updated';
-        newObj[item] = [newItem, json1[item], json2[item]];
-      } else {
-        const newItem1 = 'added';
-        newObj[item] = [newItem1, json2[item]];
       }
-    } else if (_.isPlainObject(json1[item])) {
-      const newItem = 'removed';
-      newObj[item] = [newItem, json1[item]];
-    } else {
-      const newItem1 = 'removed';
-      newObj[item] = [newItem1, json1[item]];
+      if (json2[item] === json1[item]) {
+        const prefix = 'notChanged';
+        const value = json1[item];
+        return { item, prefix, value };
+      }
+      if (keys.includes(item)) {
+        const prefix = 'updated';
+        const value = chekingForObject(json1[item]);
+        const value2 = chekingForObject(json2[item]);
+        return { item, prefix, value, value2 };
+      } else {
+        const prefix = 'added';
+        const value = chekingForObject(json2[item]);
+        return { item, prefix, value };
+      }
     }
-    return newObj;
-  }, {});
-  return newTree;*/
+    if (_.isPlainObject(json1[item])) {
+      const prefix = 'removed';
+      const value = chekingForObject(json1[item]);
+      return { item, prefix, value };
+    } else {
+      const prefix = 'removed';
+      const value = chekingForObject(json1[item]);
+      return { item, prefix, value };
+    }
+    return '';
+  });
+return result;
 };
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
