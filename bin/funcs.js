@@ -83,9 +83,9 @@ export const newResd = (tree, tree1) => {
   return result;
 };
 
-export const gendiff = (filepath1, filepath2, format = 'stylish') => {
+const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const preResalt = newResd(filepath1, filepath2);
   return chooseFormat(preResalt, format);
 };
 
-//export default gendiff;
+export default gendiff;
