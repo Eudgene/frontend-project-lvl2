@@ -22,7 +22,7 @@ const resulted = [
       { item: 'setting1', prefix: 'notChanged', value: 'Value 1' },
       { item: 'setting2', prefix: 'removed', value: 200 },
       {
-        item: 'setting3', prefix: 'updated', value: true, value2: null
+        item: 'setting3', prefix: 'updated', value: true, value2: null,
       },
       { item: 'setting4', prefix: 'added', value: 'blah blah' },
       { item: 'setting5', prefix: 'added', value: [{ item: 'key5', prefix: '', value: 'value5' }] },
@@ -30,12 +30,12 @@ const resulted = [
         item: 'setting6',
         prefix: 'notChanged',
         value: [
-        {
-          item: 'doge', prefix: 'notChanged', value: [{ item: 'wow', prefix: 'updated', value: '', value2: 'so much' }]
-        },
-        { item: 'key', prefix: 'notChanged', value: 'value' },
-        { item: 'ops', prefix: 'added', value: 'vops' },
-      ]
+          {
+            item: 'doge', prefix: 'notChanged', value: [{ item: 'wow', prefix: 'updated', value: '', value2: 'so much' }],
+          },
+          { item: 'key', prefix: 'notChanged', value: 'value' },
+          { item: 'ops', prefix: 'added', value: 'vops' },
+        ],
       },
     ],
   },
