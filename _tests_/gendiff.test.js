@@ -30,18 +30,18 @@ const resulted = [
       { item: 'setting4', prefix: 'added', value: 'blah blah' },
       { item: 'setting5', prefix: 'added', value: [{ item: 'key5', prefix: '', value: 'value5' }] },
       {
-        item: 'setting6', prefix: 'notChanged', value: 
-          [
-            { item: 'doge', prefix: 'notChanged', value: 
-              [
-                {
-                  item: 'wow',
-                  prefix: 'updated',
-                  value: 'too much',
-                  value2: 'so much',
-                }
-              ]
-            },
+        item: 'setting6', 
+        prefix: 'notChanged', 
+        value: [
+          { item: 'doge', prefix: 'notChanged', value: [
+            {
+              item: 'wow',
+              prefix: 'updated',
+              value: 'too much',
+              value2: 'so much',
+            }
+          ]
+          },
         { item: 'key', prefix: 'notChanged', value: 'value' },
         { item: 'ops', prefix: 'added', value: 'vops' }
       ] 
