@@ -13,37 +13,75 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const resulted = {
-  common: [
-    'notChanged',
-    {
-      follow: ['added', false],
-      setting1: ['notChanged', 'Value 1'],
-      setting2: ['removed', 200],
-      setting3: ['updated', true, null],
-      setting4: ['added', 'blah blah'],
-      setting5: ['added', { key5: 'value5' }],
-      setting6: [
-        'notChanged',
-        {
-          doge: ['notChanged', { wow: ['updated', '', 'so much'] }],
-          key: ['notChanged', 'value'],
-          ops: ['added', 'vops'],
-        },
-      ],
-    },
-  ],
-  group1: [
-    'notChanged',
-    {
-      baz: ['updated', 'bas', 'bars'],
-      foo: ['notChanged', 'bar'],
-      nest: ['updated', { key: 'value' }, 'str'],
-    },
-  ],
-  group2: ['removed', { abc: 12345, deep: { id: 45 } }],
-  group3: ['added', { deep: { id: { number: 45 } }, fee: 100500 }],
-};
+const resulted = [
+  {
+    item: 'common',
+    prefix: 'notChanged',
+    value: [
+      { item: 'follow', prefix: 'added', value: false },
+      { item: 'setting1', prefix: 'notChanged', value: 'Value 1' },
+      { item: 'setting2', prefix: 'removed', value: 200 },
+      {
+        item: 'setting3',
+        prefix: 'updated',
+        value: true,
+        value2: [ { item: 'key', prefix: '', value: 'value' } ]
+      },
+      { item: 'setting4', prefix: 'added', value: 'blah blah' },
+      { item: 'setting5', prefix: 'added', value: [ { item: 'key5', prefix: '', value: 'value5' } ] },
+      { item: 'setting6', prefix: 'notChanged', value: [
+        { item: 'doge', prefix: 'notChanged', value: [
+          {
+            item: 'wow',
+            prefix: 'updated',
+            value: 'too much',
+            value2: 'so much'
+          }
+        ] },
+        { item: 'key', prefix: 'notChanged', value: 'value' },
+        { item: 'ops', prefix: 'added', value: 'vops' }
+      ] }
+    ]
+  },
+  {
+    item: 'group1',
+    prefix: 'notChanged',
+    value: [
+      { item: 'baz', prefix: 'updated', value: 'bas', value2: 'bars' },
+      { item: 'foo', prefix: 'notChanged', value: 'bar' },
+      { item: 'nest', prefix: 'updated', value: [ { item: 'key', prefix: '', value: 'value' } ], value2: 'str' }
+    ]
+  },
+  { item: 'group2', prefix: 'removed', value: [
+    { item: 'abc', prefix: '', value: 12345 },
+    { item: 'deep', prefix: '', value: [ { item: 'id', prefix: '', value: 45 } ] }
+  ] },
+  { item: 'group3', prefix: 'added', value: [
+    { item: 'deep', prefix: '', value: [ { item: 'id', prefix: '', value: [ { item: 'number', prefix: '', value: 45 } ] } ] },
+    { item: 'fee', prefix: '', value: 100500 }
+  ] },
+  {
+    item: 'group4',
+    prefix: 'notChanged',
+    value: [
+      { item: 'default', prefix: 'updated', value: null, value2: '' },
+      { item: 'foo', prefix: 'updated', value: 0, value2: null },
+      {
+        item: 'isNested',
+        prefix: 'updated',
+        value: false,
+        value2: 'none'
+      },
+      { item: 'key', prefix: 'added', value: false },
+      { item: 'nest', prefix: 'notChanged', value: [
+        { item: 'bar', prefix: 'updated', value: '', value2: 0 },
+        { item: 'isNested', prefix: 'removed', value: true }
+      ] },
+      { item: 'someKey', prefix: 'added', value: true },
+      { item: 'type', prefix: 'updated', value: 'bas', value2: 'bar' }
+    ]
+  }
+];
 
 const resultedForTestsOfParser = {
   common: {
