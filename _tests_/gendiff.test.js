@@ -56,18 +56,22 @@ const resulted = [
     prefix: 'notChanged',
     value: [
       {
-        item: 'baz', prefix: 'updated', value: 'bas', value2: 'bars'
+        item: 'baz', prefix: 'updated', value: 'bas', value2: 'bars',
       },
       { item: 'foo', prefix: 'notChanged', value: 'bar' },
       {
-        item: 'nest', prefix: 'updated', value: [{ item: 'key', prefix: '', value: 'value' }], value2: 'str'
+        item: 'nest', prefix: 'updated', value: [{ item: 'key', prefix: '', value: 'value' }], value2: 'str',
       },
     ],
   },
-  { item: 'group2', prefix: 'removed', value: [
+  { 
+    item: 'group2',
+    prefix: 'removed',
+    value: [
     { item: 'abc', prefix: '', value: 12345 },
     { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: 45 }] },
-  ] },
+    ]
+  },
   { item: 'group3', prefix: 'added', value: [
     { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: [{ item: 'number', prefix: '', value: 45 }] }] },
     { item: 'fee', prefix: '', value: 100500 },
