@@ -30,8 +30,8 @@ const resulted = [
       { item: 'setting4', prefix: 'added', value: 'blah blah' },
       { item: 'setting5', prefix: 'added', value: [{ item: 'key5', prefix: '', value: 'value5' }] },
       {
-        item: 'setting6', 
-        prefix: 'notChanged', 
+        item: 'setting6',
+        prefix: 'notChanged',
         value: [
           { item: 'doge', prefix: 'notChanged', value: [
             {
@@ -39,14 +39,14 @@ const resulted = [
               prefix: 'updated',
               value: 'too much',
               value2: 'so much',
-            }
-          ]
+            },
+          ],
           },
-        { item: 'key', prefix: 'notChanged', value: 'value' },
-        { item: 'ops', prefix: 'added', value: 'vops' }
-      ] 
-      }
-    ]
+          { item: 'key', prefix: 'notChanged', value: 'value' },
+          { item: 'ops', prefix: 'added', value: 'vops' },
+        ],
+      },
+    ],
   },
   {
     item: 'group1',
@@ -55,7 +55,7 @@ const resulted = [
       { item: 'baz', prefix: 'updated', value: 'bas', value2: 'bars' },
       { item: 'foo', prefix: 'notChanged', value: 'bar' },
       { item: 'nest', prefix: 'updated', value: [{ item: 'key', prefix: '', value: 'value' }], value2: 'str' },
-    ]
+    ],
   },
   { item: 'group2', prefix: 'removed', value: [
     { item: 'abc', prefix: '', value: 12345 },
@@ -63,7 +63,7 @@ const resulted = [
   ] },
   { item: 'group3', prefix: 'added', value: [
     { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: [{ item: 'number', prefix: '', value: 45 }] }] },
-    { item: 'fee', prefix: '', value: 100500 }
+    { item: 'fee', prefix: '', value: 100500 },
   ] },
   {
     item: 'group4',
