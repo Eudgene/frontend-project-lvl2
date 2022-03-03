@@ -72,19 +72,23 @@ const resulted = [
       { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: 45 }] },
     ],
   },
-  { item: 'group3', prefix: 'added', value: [
+  { 
+    item: 'group3',
+    prefix: 'added',
+    value: [
     { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: [{ item: 'number', prefix: '', value: 45 }] }] },
     { item: 'fee', prefix: '', value: 100500 },
-  ] },
+    ]
+  },
   {
     item: 'group4',
     prefix: 'notChanged',
     value: [
       {
-        item: 'default', prefix: 'updated', value: null, value2: ''
+        item: 'default', prefix: 'updated', value: null, value2: '',
       },
       {
-        item: 'foo', prefix: 'updated', value: 0, value2: null
+        item: 'foo', prefix: 'updated', value: 0, value2: null,
       },
       {
         item: 'isNested',
@@ -97,15 +101,15 @@ const resulted = [
         item: 'nest',
         prefix: 'notChanged',
         value: [
-        {
-          item: 'bar', prefix: 'updated', value: '', value2: 0
-        },
-        { item: 'isNested', prefix: 'removed', value: true },
-        ]
+          {
+            item: 'bar', prefix: 'updated', value: '', value2: 0,
+          },
+          { item: 'isNested', prefix: 'removed', value: true },
+        ],
       },
       { item: 'someKey', prefix: 'added', value: true },
       {
-        item: 'type', prefix: 'updated', value: 'bas', value2: 'bar'
+        item: 'type', prefix: 'updated', value: 'bas', value2: 'bar',
       },
     ],
   },
