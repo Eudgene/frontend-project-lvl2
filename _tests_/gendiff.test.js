@@ -29,8 +29,8 @@ const resulted = [
       },
       { item: 'setting4', prefix: 'added', value: 'blah blah' },
       { item: 'setting5', prefix: 'added', value: [{ item: 'key5', prefix: '', value: 'value5' }] },
-      { item: 'setting6', prefix: 'notChanged', value: 
-      [
+      { 
+        item: 'setting6', prefix: 'notChanged', value: [
         { item: 'doge', prefix: 'notChanged', value: 
         [
           {
