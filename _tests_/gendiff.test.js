@@ -31,8 +31,12 @@ const resulted = [
         prefix: 'notChanged',
         value: [
           {
-            item: 'doge', prefix: 'notChanged', value: [
-              { item: 'wow', prefix: 'updated', value: '', value2: 'so much' }
+            item: 'doge',
+            prefix: 'notChanged',
+            value: [
+              {
+                item: 'wow', prefix: 'updated', value: '', value2: 'so much'
+              },
             ],
           },
           { item: 'key', prefix: 'notChanged', value: 'value' },
