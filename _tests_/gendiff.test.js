@@ -35,7 +35,7 @@ const resulted = [
             prefix: 'notChanged',
             value: [
               {
-                item: 'wow', prefix: 'updated', value: '', value2: 'so much'
+                item: 'wow', prefix: 'updated', value: '', value2: 'so much',
               },
             ],
           },
