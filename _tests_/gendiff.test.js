@@ -33,14 +33,17 @@ const resulted = [
         item: 'setting6',
         prefix: 'notChanged',
         value: [
-          { item: 'doge', prefix: 'notChanged', value: [
-            {
-              item: 'wow',
-              prefix: 'updated',
-              value: 'too much',
-              value2: 'so much',
-            },
-          ],
+          { 
+            item: 'doge',
+            prefix: 'notChanged',
+            value: [
+              {
+                item: 'wow',
+                prefix: 'updated',
+                value: 'too much',
+                value2: 'so much',
+              },
+            ],
           },
           { item: 'key', prefix: 'notChanged', value: 'value' },
           { item: 'ops', prefix: 'added', value: 'vops' },
@@ -75,17 +78,17 @@ const resulted = [
         item: 'isNested',
         prefix: 'updated',
         value: false,
-        value2: 'none'
+        value2: 'none',
       },
       { item: 'key', prefix: 'added', value: false },
       { item: 'nest', prefix: 'notChanged', value: [
         { item: 'bar', prefix: 'updated', value: '', value2: 0 },
-        { item: 'isNested', prefix: 'removed', value: true }
+        { item: 'isNested', prefix: 'removed', value: true },
       ] },
       { item: 'someKey', prefix: 'added', value: true },
-      { item: 'type', prefix: 'updated', value: 'bas', value2: 'bar' }
-    ]
-  }
+      { item: 'type', prefix: 'updated', value: 'bas', value2: 'bar' },
+    ],
+  },
 ];
 
 const resultedForTestsOfParser = {
