@@ -70,7 +70,7 @@ const resulted = [
     item: 'group3',
     prefix: 'added',
     value: [
-      { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: [Array] }] },
+      { item: 'deep', prefix: '', value: [{ item: 'id', prefix: '', value: [{ item: 'number', prefix: '', value: 45 }] }] },
       { item: 'fee', prefix: '', value: 100500 },
     ],
   },
