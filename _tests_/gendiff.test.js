@@ -33,7 +33,7 @@ const resulted = [
         item: 'setting6',
         prefix: 'notChanged',
         value: [
-          { 
+          {
             item: 'doge',
             prefix: 'notChanged',
             value: [
@@ -55,9 +55,13 @@ const resulted = [
     item: 'group1',
     prefix: 'notChanged',
     value: [
-      { item: 'baz', prefix: 'updated', value: 'bas', value2: 'bars' },
+      {
+        item: 'baz', prefix: 'updated', value: 'bas', value2: 'bars'
+      },
       { item: 'foo', prefix: 'notChanged', value: 'bar' },
-      { item: 'nest', prefix: 'updated', value: [{ item: 'key', prefix: '', value: 'value' }], value2: 'str' },
+      {
+        item: 'nest', prefix: 'updated', value: [{ item: 'key', prefix: '', value: 'value' }], value2: 'str'
+      },
     ],
   },
   { item: 'group2', prefix: 'removed', value: [
