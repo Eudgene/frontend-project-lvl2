@@ -174,3 +174,9 @@ describe('6-Сhecking the Json', () => {
     expect(toJson(resulted)).toEqual(resultInJson);
   });
 });
+
+describe('7-Сhecking index.js', () => {
+  test('Сhecking the result for compliance with the expected', () => {
+    expect(chooseFormat(resulted, plain)).toEqual(resultOfPlain);
+  });
+});
