@@ -7,6 +7,7 @@ import parsFunc from '../bin/parsers.js';
 import plain from '../formatters/plain.js';
 import toJson from '../formatters/json.js';
 import chooseFormat from '../formatters/index.js';
+import stylish from '../formatters/stylish.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -183,6 +184,6 @@ describe('7-Сhecking index.js', () => {
     expect(chooseFormat(resulted, 'plain')).toEqual(resultOfPlain.join('\n'));
     expect(chooseFormat(resulted, 'json')).toEqual(resultInJson);
     console.log(chooseFormat(resulted))
-    expect(chooseFormat(resulted)).toEqual(resultedOfStylish);
+    expect(chooseFormat(resulted)).toEqual(stylish(resulted));
   });
 });
