@@ -225,6 +225,7 @@ describe('7-Сhecking index.js', () => {
   test('Сhecking the result for compliance with the expected', () => {
     expect(chooseFormat(resulted, 'plain')).toEqual(resultOfPlain.join('\n'));
     expect(chooseFormat(resulted, 'json')).toEqual(resultInJson);
+    console.log(resulted)
     expect(chooseFormat(resulted)).toEqual(resultedOfStylish);
   });
 });
