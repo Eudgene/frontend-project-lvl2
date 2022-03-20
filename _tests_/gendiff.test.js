@@ -184,6 +184,6 @@ describe('7-Сhecking index.js', () => {
     expect(chooseFormat(resulted, 'plain')).toEqual(resultOfPlain.join('\n'));
     expect(chooseFormat(resulted, 'json')).toEqual(resultInJson);
     console.log(chooseFormat(resulted))
-    expect(chooseFormat(resulted)).toEqual(stylish(resulted));
+    expect(chooseFormat(resulted)).toEqual(stylish(resulted, ' ', 2));
   });
 });
